@@ -1,0 +1,9 @@
+
+/* <-------------------------header and Hero-----------------------------> */
+
+.maincontent, .container-fluid {
+    padding: 0;
+}
+#maincontent .top-slider-wrapper #image-slider {
+    width: 100vw;
+}
