@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Butler;
+    src: url(https://github.com/scibettas1/station-bay/blob/ff9962faf2ddf6f278b35b2c01f8de4547b94c8e/Butler_Medium.otf);
+}
+
 
 /* <-------------------------header-----------------------------> */
 
@@ -34,6 +39,7 @@ span.burger {
 .main-header #navwrapper .navbar .navbar-inner .nav>li {
     color: #fff;
     text-transform: uppercase;
+    font-family: Butler;
 }
 /* <-------------------------Hero-----------------------------> */
 
