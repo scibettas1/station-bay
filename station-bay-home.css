@@ -13,42 +13,58 @@ body {
     left: 0;
   }
 
-.tag1 {
-    font-family: 'Playfair Display', serif;
-    color: #a3bbc4;
-    font-size: 124px;
-}
-.tag2, .tag3 {
-    font-size: 20px;
-    font-family: 'Montserrat';
-    color: #fff;
-    font-weight: 100;
-    letter-spacing: 2px;
-}
-.tag2{
-    font-weight: bold;
-    letter-spacing: 24px;
-    font-size: 30px;
-    line-height: 0;
-}
+/* <-------------------------logo-----------------------------> */
 
+.main-header .header-wrapper #logo-container img {
+    max-height: 90px;
+}
 
 /* <-------------------------header-----------------------------> */
 
-
+/* this is the backup if the video doesn't work */
 .main-header {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/wave-still.PNG) center no-repeat;
     background-size: cover;
 }
+/* temporary code so I can see the links while i'm designing */
+.hidden {
+    display: inline-block!important;
+    visibility: visible!important;
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #rpdiv a::before {
+    content: "LOGIN";
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #apldiv a::before {
+    content: "APPLY NOW";
+}
+
 .main-header .header-wrapper #navwrapper {
     right: 0px;
-    top: 127px;
+    top: 152px;
     width: 100vw;
 }
-/* <-------------------------navigation-----------------------------> */
-.main-header .header-wrapper a.click_to_call_href {
-    color: #fff !important;
+.main-header .header-wrapper .right-nav-links-wrapper {
+    line-height: 1;
 }
+.main-header .header-wrapper a.click_to_call_href,
+#apldiv a, #rpdiv a {
+    color: #fff !important;
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #rpdiv::after,
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #apldiv::after, 
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #call-us::after {
+    background: #a3bbc4;
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul a:hover {
+    border-top: 2px solid #a3bbc4;
+    border-bottom: 2px solid #a3bac3;
+}
+/* <-------------------------navigation-----------------------------> */
+
 span.burger {
     color: #fff;
 }
@@ -96,8 +112,42 @@ span.burger {
 #maincontent .top-slider-wrapper #image-slider {
     width: 100vw;
 }
+#maincontent .top-slider-wrapper #image-slider .carousel-inner .item::before {
+    background: none;
+}
+
+#maincontent .tag-line-wrapper {
+    top: 40%;
+}
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line {
+    font-size: 0;
+}
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-1::before,
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-2::before,
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before  {
     display:none;
+}
+.tag1 {
+    font-family: 'Playfair Display', serif;
+    color: #a3bbc4;
+    font-size: 124px;
+}
+.tag2, .tag3 {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.tag2{
+    font-weight: bold;
+    letter-spacing: 24px;
+    font-size: 30px;
+    line-height: 0;
+}
+#homepage .btn.btn-primary.btn-banner::before {
+    background: #a3bbc4;
+}
+#homepage .btn.btn-primary.btn-banner:hover {
+    border-color: #a3bac3 !important;
 }
