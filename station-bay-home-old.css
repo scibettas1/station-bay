@@ -1,44 +1,18 @@
 
-/* <-------------------------header-----------------------------> */
+/* <-------------------------header and Hero-----------------------------> */
 
-
-.main-header {
+.mainheader {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/wave-still.PNG) center no-repeat;
     background-size: cover;
 }
-
-/* <-------------------------navigation-----------------------------> */
 .main-header .header-wrapper a.click_to_call_href {
     color: #fff !important;
 }
-span.burger {
-    color: #fff;
-}
+
 .main-header .header-wrapper .lbl-navcheck .burger::before,
 .main-header .header-wrapper .lbl-navcheck .burger .bar,
 .main-header .header-wrapper .lbl-navcheck .burger::after {
-    background-color: #fff!important;
-}
-.main-header .header-wrapper #navwrapper {
-    right: 0px;
-    top: 127px;
-    width: 100vw;
-}
-.main-header #navwrapper::before {
-    background: #003c5b;
-}
-.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a {
-    border-left: 3px solid #a3bbc4;
-}
-.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active,
-.main-header #navwrapper .navbar .navbar-inner .nav>li {
-    color: #fff;
-    text-transform: uppercase;
-}
-/* <-------------------------Hero-----------------------------> */
-
-.carousel-indicators {
-    display:none;
+    background-color: #fff;
 }
 #maincontent {
     margin-top: 126px!important;
