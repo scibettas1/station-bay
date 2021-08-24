@@ -1,6 +1,35 @@
-@font-face {
-    font-family: Butler;
-    src: url(https://github.com/scibettas1/station-bay/blob/ff9962faf2ddf6f278b35b2c01f8de4547b94c8e/Butler_Medium.otf);
+body {
+    font-family: 'Montserrat';
+    color: #606060;
+    font-weight: bold;
+}
+#video-bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+
+.tag1 {
+    font-family: 'Playfair Display', serif;
+    color: #a3bbc4;
+    font-size: 124px;
+}
+.tag2, .tag3 {
+    font-size: 20px;
+    font-family: 'Montserrat';
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.tag2{
+    font-weight: bold;
+    letter-spacing: 24px;
+    font-size: 30px;
+    line-height: 0;
 }
 
 
@@ -11,7 +40,11 @@
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/wave-still.PNG) center no-repeat;
     background-size: cover;
 }
-
+.main-header .header-wrapper #navwrapper {
+    right: 0px;
+    top: 127px;
+    width: 100vw;
+}
 /* <-------------------------navigation-----------------------------> */
 .main-header .header-wrapper a.click_to_call_href {
     color: #fff !important;
@@ -24,22 +57,30 @@ span.burger {
 .main-header .header-wrapper .lbl-navcheck .burger::after {
     background-color: #fff!important;
 }
-.main-header .header-wrapper #navwrapper {
-    right: 0px;
-    top: 127px;
-    width: 100vw;
+
+.main-header #navwrapper .navbar {
+    right: 0;
 }
 .main-header #navwrapper::before {
     background: #003c5b;
 }
-.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a {
+.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
+.main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
     border-left: 3px solid #a3bbc4;
 }
+
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active,
-.main-header #navwrapper .navbar .navbar-inner .nav>li {
+.main-header #navwrapper .navbar .navbar-inner .nav>li,
+.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a:hover {
     color: #fff;
     text-transform: uppercase;
-    font-family: Butler;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.main-header #navwrapper .navbar .navbar-inner .nav>li:hover {
+    background: #003c5b;
+    color: #fff;
 }
 /* <-------------------------Hero-----------------------------> */
 
@@ -55,13 +96,8 @@ span.burger {
 #maincontent .top-slider-wrapper #image-slider {
     width: 100vw;
 }
-#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-1::before {
-    content: "DESTINATION:";
-}
-#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-2::before {
-    color: #fff;
-    content: "EXTAORDINARY";
-}
-#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before {
-    content: "New Studio, 1 & 2 Bedroom Waterfront Rentals Opening Soonin South Amboy, NJ";
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-1::before,
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-2::before,
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before  {
+    display:none;
 }
