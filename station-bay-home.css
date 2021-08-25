@@ -163,22 +163,32 @@ span.burger {
 }
 /* <-------------------------headings-----------------------------> */
 
-#maincontent .romance-para-section .data-wrapper h1,
 #maincontent .romance-para-section .data-wrapper h2,
-#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-sub-header::before,
+body .section .section-sub-header,
 .sub-head {
     color: #141d29;
     font-family: 'PLAYFAIR DISPLAY';
-    font-size: calc(44px + 1vw);
+    font-size: calc(40px + 1vw)!important;
     margin: 0px;
-    line-height: calc(40px + 1vw);
+    line-height: calc(40px + 1vw)!important;
 }
 
-#maincontent .romance-para-section .data-wrapper h2,
+#maincontent .romance-para-section .data-wrapper h1,
 .sub-head{
     color: #a3bbc3;
 }
-
+#maincontent .romance-para-section .data-wrapper h1 {
+    font-family: 'Montserrat';
+    font-size: calc(9px + 1vw);
+    letter-spacing: calc(1px + 0.5vw);
+    margin: 0px;
+    line-height: calc(40px + 1vw)!important;
+}
+body .section .section-title-wrapper .section-title {
+    font-size: calc(3px + 5vw)!important;
+    line-height: 0px;
+    font-family: 'PLAYFAIR DISPLAY';
+}
 
 /* <-------------------------containers-----------------------------> */
 
@@ -211,14 +221,121 @@ span.burger {
 }
 
 /* <-------------------------amenities section-----------------------------> */
+
+#maincontent .amenities-section .section-title-wrapper .section-title::before {
+    content: "FEATURES & AMENITIES";
+}
+#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper {
+    padding: 50px 50px 42px 50px;
+}
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-sub-header::before {
     content: "THE JOY IS IN";
 }
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-para::before {
     content: "Pursue your passions in a resort-like setting where luxury amenities extend from indoors to out, offering indulgent escapes as well as practical solutions to work, eat, relax, entertain, exercise, and so much more. Our curated selection of shared spaces set against a bay front panorama make coming home feel like an every day vacation.";
 }
-
-
+#maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg) top left no-repeat;
+    background-size: cover;
+}
+@media (min-width: 992px) {
+    #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-2 {
+        display: none;
+    }
+    #maincontent .amenities-section .wrapper .image-wrapper .img {
+        width: 100%;
+        height: 615px;
+        max-width: none;
+    }
+}
+/* <-------------------------neighborrhood section -----------------------------> */
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-sub-header::before {
+    content: "DEPART FOR A";
+}
+@media (min-width: 992px){
+    .col-md-6 {
+        width: 40%;
+    }
+    .col-md-push-6 {
+        left: 40%;
+    }
+    .col-md-pull-3 {
+        right: 30%;
+    }
+    .col-md-3 {
+        width: 30%;
+    }
+    #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper {
+        padding: 20% 8% 0 8%;
+    }
+}
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para::before {
+    content: "Moments from South Amboy’s Train Station and upcoming Ferry Terminal, our location provides unparalleled convenience, allowing you to access Manhattan in minutes while still surrounded by parks, playgrounds, and the tree-lined streets of a suburban enclave – just steps from downtown. Conveniently connected yet blissfully serene, our incredible location is the best of both worlds.";
+}
+/* images */
+/* top left */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-1 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1191065446.jpg) center left no-repeat;
+    background-size: cover;
+}
+/* bottom left 1 */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-2 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1156261753.jpg) center right no-repeat;
+    background-size: cover;
+}
+/* bottom left 2 */
+/* #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-3 {
+    background: url(../images/neighborhood_small_image_2.jpg) center center no-repeat;
+    background-size: cover;
+} */
+/* Top right */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-4 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1829212376.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* bottom right */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-5 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_519104197.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* <-------------------------stylish homes section-----------------------------> */
+#maincontent .romance-para-section.stylish-homes-section .section-title-wrapper .section-title::before {
+    content: "LUXURY RESIDENCES";
+}
+#maincontent .romance-para-section.stylish-homes-section .image-wrapper .image {
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_775493599.jpg);
+    background-size: cover;
+}
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .section-sub-header::before {
+    content: "ARRIVE AT";
+}
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .para-2::before {
+    content: "Come home to the waterfront and discover an impeccable collection of new luxury residences where views stretch to the horizon and spectacular studio, one, and two bedroom homes offer modern amenities with incredible style. Spacious and serene, with a seamless approach to daily life, you’ll find everything you’ve been searching for at Station Bay.";
+}
+#maincontent .romance-para-section .adv-images-wrapper .img.image-1 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg);
+    background-size: cover;
+}
+/* #maincontent .romance-para-section .adv-images-wrapper .img.image-2 {
+    background: url(../images/stylish_homes_2.jpg);
+    background-size: cover;
+} */
+/* <-------------------------footer-----------------------------> */
+footer {
+    padding: 0;
+}
+footer .data-wrapper {
+    background: #141d29;
+    color: #fff;
+    letter-spacing: 2px;
+}
+footer .data-wrapper #footer-links .nav-list li .footerlinks {
+    color: #fff;
+}
+footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
+    border-top: 2px solid #a3bbc3;
+    border-bottom: 2px solid #a3bbc3;
+}
 /* <-------------------------mobile-----------------------------> */
 
 /* hamburger */
@@ -228,6 +345,15 @@ span.burger {
 #MenuButtonHolder{
     border: 1px solid #fff;
 }
+@media (max-width: 1020px) {
+    #maincontent .romance-para-section .image-wrapper .image {
+        width: 100vw;
+    }
+    body .section .section-title-wrapper .section-title {
+        display:none;
+    }
+}
+
 
 @media (max-width: 798px) {
     #maincontent .top-slider-wrapper {
@@ -246,7 +372,4 @@ span.burger {
         width: 100vw;
         height: 100vh;
       }
-      #maincontent .romance-para-section .image-wrapper .image {
-        width: 100vw;
-    }
 }

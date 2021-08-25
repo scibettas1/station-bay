@@ -6,8 +6,12 @@ $('.tag-line').append('<div><p class="tag2">DESTINATION:</p><p class="tag1">EXTR
 
 $('.amenities-section .section-sub-header').append('<div><p class="sub-head">THE JOURNEY</p><br /></div>');
 
-// replace Sation Bay with ARRIVE AT
-$('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('Station Bay', 'ARRIVE AT'); });
+$('.neighbourhood-section .section-sub-header').append('<div><p class="sub-head">BRAND NEW DAY</p><br /></div>');
+
+$('.stylish-homes-section .section-sub-header').append('<div><p class="sub-head">INCREDIBLE LIVING</p><br /></div>');
+
+// replace Sation Bay with THE WATERFRONT
+$('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('Station Bay', 'THE WATERFRONT'); });
 $(document).ajaxComplete(function () {
-  $('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('Station Bay', 'ARRIVE AT'); });
+  $('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('Station Bay', 'THE WATERFRONT'); });
 });
