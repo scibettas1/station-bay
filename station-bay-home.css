@@ -3,6 +3,9 @@ body {
     color: #606060;
     font-weight: bold;
 }
+body h4 {
+    font-family: 'Montserrat';
+}
 #video-bg {
     position: absolute;
     object-fit: cover;
@@ -12,6 +15,13 @@ body {
     top: 0;
     left: 0;
   }
+/* <-------------------------buttons-----------------------------> */
+#homepage .btn.btn-primary:hover,
+#homepage .btn.btn-primary::before,
+#homepage .btn.btn-primary.btn-banner:hover {
+    border-color: #a3bac3 !important;
+    background: #a3bac3 !important;
+}
 
 /* <-------------------------logo-----------------------------> */
 
@@ -130,7 +140,7 @@ span.burger {
 }
 .tag1 {
     font-family: 'Playfair Display', serif;
-    color: #a3bbc4;
+    color: #fff;
     font-size: 9vw;
 }
 .tag2, .tag3 {
@@ -146,12 +156,69 @@ span.burger {
     font-size: calc(11px + 1vw);
     line-height: 0;
 }
-#homepage .btn.btn-primary.btn-banner::before {
+
+/* <-------------------------scroll-----------------------------> */
+#homepage .scroll-btn-wrapper .vertical-line {
     background: #a3bbc4;
 }
-#homepage .btn.btn-primary.btn-banner:hover {
-    border-color: #a3bac3 !important;
+/* <-------------------------headings-----------------------------> */
+
+#maincontent .romance-para-section .data-wrapper h1,
+#maincontent .romance-para-section .data-wrapper h2,
+#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-sub-header::before,
+.sub-head {
+    color: #141d29;
+    font-family: 'PLAYFAIR DISPLAY';
+    font-size: calc(44px + 1vw);
+    margin: 0px;
+    line-height: calc(40px + 1vw);
 }
+
+#maincontent .romance-para-section .data-wrapper h2,
+.sub-head{
+    color: #a3bbc3;
+}
+
+
+/* <-------------------------containers-----------------------------> */
+
+#maincontent .romance-para-section .data-wrapper,
+#maincontent .amenities-section .wrapper .data-wrapper {
+    height: fit-content;
+    max-height: none;
+}
+#maincontent .romance-para-section #InnerContentDiv {
+    margin-top: 0;
+}
+@media (min-width: 992px){
+    .col-md-5,
+    #maincontent .amenities-section .wrapper .data-wrapper {
+        width: 30vw;
+        min-width: 525px;
+    }   
+}
+
+/* <-------------------------romance section -----------------------------> */
+#maincontent .romance-para-section .image-wrapper .image {
+    -webkit-box-shadow: 0 13px 0 #141D29;
+    -moz-box-shadow: 0 13px 0 #141D29;
+    box-shadow: 0 13px 0 #141D29;
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 660px;
+    width: 50vw;
+}
+
+/* <-------------------------amenities section-----------------------------> */
+#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-sub-header::before {
+    content: "THE JOY IS IN";
+}
+#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-para::before {
+    content: "Pursue your passions in a resort-like setting where luxury amenities extend from indoors to out, offering indulgent escapes as well as practical solutions to work, eat, relax, entertain, exercise, and so much more. Our curated selection of shared spaces set against a bay front panorama make coming home feel like an every day vacation.";
+}
+
+
 /* <-------------------------mobile-----------------------------> */
 
 /* hamburger */
@@ -179,4 +246,7 @@ span.burger {
         width: 100vw;
         height: 100vh;
       }
+      #maincontent .romance-para-section .image-wrapper .image {
+        width: 100vw;
+    }
 }
