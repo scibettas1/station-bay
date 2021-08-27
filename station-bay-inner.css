@@ -22,6 +22,10 @@ body h4 {
     border-color: #a3bac3 !important;
     background: #a3bac3 !important;
 }
+/* <-------------------------lists-----------------------------> */
+li {
+    font-weight: 100;
+}
 
 /* <-------------------------logo-----------------------------> */
 
@@ -122,13 +126,6 @@ span.burger {
 .maincontent, .container-fluid {
     padding: 0!important;
 }
-#maincontent .top-slider-wrapper #image-slider {
-    width: 100vw;
-}
-#maincontent .top-slider-wrapper #image-slider .carousel-inner .item::before {
-    background: none;
-}
-
 #maincontent .tag-line-wrapper {
     top: 50%;
 }
@@ -143,7 +140,7 @@ span.burger {
 .tag1 {
     font-family: 'Playfair Display', serif;
     color: #141d29;
-    font-size: 4vw;
+    font-size: calc(22px + 4vw);
 }
 .tag2 {
     font-size: calc(10px + 1vw);
@@ -168,6 +165,7 @@ body h1 {
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
 }
+
 #maincontent .romance-para-section .data-wrapper h1 {
     font-family: 'Montserrat';
     font-size: calc(9px + 1vw);
@@ -205,4 +203,37 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
 }
 #MenuButtonHolder{
     border: 1px solid #fff;
+}
+@media (max-width: 1020px) {
+    #maincontent .romance-para-section .image-wrapper .image {
+        width: 100vw;
+    }
+    body .section .section-title-wrapper .section-title {
+        display:none;
+    }
+}
+
+
+@media (max-width: 798px) {
+    #maincontent .banner-wrapper {
+        margin-bottom: 0;
+        margin-top: -126px;
+    }
+    #innerpage #maincontent .banner-wrapper #banner, 
+    #rentcafe_residentportal #maincontent .banner-wrapper #banner, 
+    #rentcafe_onlineleasing #maincontent .banner-wrapper #banner {
+        max-height: none;
+    }
+    .carousel-inner img {
+        width: auto;
+        max-width: none;
+        height: 40vh;
+    }
+    #video-bg {
+        width: 100vw;
+        height: 100vh;
+      }
+    .container {
+        background: white;
+    }
 }
