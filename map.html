@@ -35,7 +35,8 @@
     #origin-input,
     #destination-input {
       background-color: #fff;
-      font-family: 'Poppins';
+      font-family: 'Montserrat';
+      font-weight: bold;
       font-size: 15px;
       font-weight: 300;
       margin-left: 12px;
@@ -48,6 +49,20 @@
     #destination-input:focus {
       border-color: #5194b8;
     }
+    .shore {
+    background-color: #003c5b;
+    color: white;
+    padding: 16px 0px;
+    text-align: center;
+    letter-spacing: 7px;
+    }
+    @media (min-width: 1200px){
+        .row-fluid [class*="span"]:first-child,
+        .row-fluid .span4 {
+            margin-left: 20px;
+        }
+    }
+
   </style>
   <script>
   
@@ -63,12 +78,13 @@
       const directionsService = new google.maps.DirectionsService();
       const map = new google.maps.Map(document.getElementById("map"), {
         mapTypeControl: false,
-        zoom: 16,
+        zoom: 15,
         center: myLatLng,
+        // center: { lat: 40.4900694, lng: -74.2900000 },
         mapId: "892d9dde9f6dc82e",
         disableDefaultUI: true,
       });
-      const image = "https://cdngeneral.rentcafe.com/dmslivecafe/2/70799/logo-map-outer-glow.png";
+      const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin.png";
       new google.maps.Marker({
         position: myLatLng,
         map,
@@ -144,8 +160,13 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   
   
-  <h1>Get Directions</h1>
-  
+  <h1>GET DIRECTIONS</h1>
+  <br />
+ <div class="shore row-fluid">
+     <div class="span4">SANDY HOOK < 40 MIN</div>
+     <div class="span4">POINT PLEASANT < 45 MIN</div>
+     <div class="span4"> SEASIDE < 1 HOUR</div>
+ </div>
   <div id="controls">
     <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location" />
   

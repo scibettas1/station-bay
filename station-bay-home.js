@@ -15,3 +15,22 @@ $('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('
 $(document).ajaxComplete(function () {
   $('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('Station Bay', 'THE WATERFRONT'); });
 });
+
+$('#map-canvas').append('<div id="map"><iframe width="100%" height="450" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoBkPWmTk-mrqAFR6s5ptuiW87wiuryCI&q=place_id:ChIJpeRtzuPNw4kRjBdUV1UsENM" allowfullscreen></iframe></div>');
+
+function initMap() {
+  const myLatLng = { lat: 40.4900694, lng: -74.2817293 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 16,
+    center: myLatLng,
+    mapId: "892d9dde9f6dc82e",
+  });
+  const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin.png";
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    icon: image,
+  });
+}
+
+initMap()

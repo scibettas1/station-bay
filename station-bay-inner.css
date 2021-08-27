@@ -109,8 +109,12 @@ span.burger {
     background: #003c5b;
     color: #fff;
 }
-/* <-------------------------Hero-----------------------------> */
-
+/* <-------------------------BANNER-----------------------------> */
+#innerpage #maincontent .banner-wrapper #banner::after, 
+#rentcafe_residentportal #maincontent .banner-wrapper #banner::after, 
+#rentcafe_onlineleasing #maincontent .banner-wrapper #banner::after {
+    background: transparent;
+}
 
 #maincontent {
     margin-top: 152px!important;
@@ -126,7 +130,7 @@ span.burger {
 }
 
 #maincontent .tag-line-wrapper {
-    top: 40%;
+    top: 50%;
 }
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line {
     font-size: 0;
@@ -138,17 +142,13 @@ span.burger {
 }
 .tag1 {
     font-family: 'Playfair Display', serif;
-    color: #fff;
-    font-size: 9vw;
+    color: #141d29;
+    font-size: 4vw;
 }
-.tag2, .tag3 {
+.tag2 {
     font-size: calc(10px + 1vw);
     font-family: 'Montserrat';
-    color: #fff;
-    font-weight: 100;
-    letter-spacing: 2px;
-}
-.tag2{
+    color: #141d29;
     font-weight: bold;
     letter-spacing: calc(2px + 1vw);
     font-size: calc(11px + 1vw);
@@ -161,19 +161,12 @@ span.burger {
 }
 /* <-------------------------headings-----------------------------> */
 
-#maincontent .romance-para-section .data-wrapper h2,
-body .section .section-sub-header,
-.sub-head {
+body h1 {
     color: #141d29;
     font-family: 'PLAYFAIR DISPLAY';
     font-size: calc(40px + 1vw)!important;
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
-}
-
-#maincontent .romance-para-section .data-wrapper h1,
-.sub-head{
-    color: #a3bbc3;
 }
 #maincontent .romance-para-section .data-wrapper h1 {
     font-family: 'Montserrat';
