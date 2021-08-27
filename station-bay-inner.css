@@ -1,0 +1,215 @@
+body {
+    font-family: 'Montserrat';
+    color: #606060;
+    font-weight: bold;
+}
+body h4 {
+    font-family: 'Montserrat';
+}
+#video-bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+/* <-------------------------buttons-----------------------------> */
+.btn.btn-primary:hover,
+.btn.btn-primary::before,
+.btn.btn-primary.btn-banner:hover {
+    border-color: #a3bac3 !important;
+    background: #a3bac3 !important;
+}
+
+/* <-------------------------logo-----------------------------> */
+
+.main-header .header-wrapper #logo-container img {
+    max-height: 90px;
+}
+
+/* <-------------------------header-----------------------------> */
+
+/* this is the backup if the video doesn't work */
+.main-header {
+    /* background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/wave-still.PNG) center no-repeat;
+    background-size: cover; */
+    background: transparent;
+}
+/* temporary code so I can see the links while i'm designing */
+.hidden {
+    display: inline-block!important;
+    visibility: visible!important;
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #rpdiv a::before {
+    content: "LOGIN";
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #apldiv a::before {
+    content: "APPLY NOW";
+}
+
+.main-header .header-wrapper #navwrapper {
+    right: 0px;
+    top: 152px;
+    width: 100vw;
+}
+.main-header .header-wrapper .right-nav-links-wrapper {
+    line-height: 1;
+}
+.main-header .header-wrapper a.click_to_call_href,
+#apldiv a, #rpdiv a {
+    color: #fff !important;
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #rpdiv::after,
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #apldiv::after, 
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul #call-us::after {
+    background: #a3bbc4;
+}
+.main-header .header-wrapper .right-nav-links-wrapper #login-links ul a:hover {
+    border-top: 2px solid #a3bbc4;
+    border-bottom: 2px solid #a3bac3;
+}
+/* <-------------------------navigation-----------------------------> */
+
+span.burger {
+    color: #fff;
+}
+.main-header .header-wrapper .lbl-navcheck .burger::before,
+.main-header .header-wrapper .lbl-navcheck .burger .bar,
+.main-header .header-wrapper .lbl-navcheck .burger::after {
+    background-color: #fff!important;
+}
+
+.main-header #navwrapper .navbar {
+    right: 0;
+}
+.main-header #navwrapper::before {
+    background: #003c5b;
+}
+.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
+.main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
+    border-left: 3px solid #a3bbc4;
+}
+
+.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active,
+.main-header #navwrapper .navbar .navbar-inner .nav>li,
+.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a:hover {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.main-header #navwrapper .navbar .navbar-inner .nav>li:hover {
+    background: #003c5b;
+    color: #fff;
+}
+/* <-------------------------Hero-----------------------------> */
+
+
+#maincontent {
+    margin-top: 152px!important;
+}
+.maincontent, .container-fluid {
+    padding: 0!important;
+}
+#maincontent .top-slider-wrapper #image-slider {
+    width: 100vw;
+}
+#maincontent .top-slider-wrapper #image-slider .carousel-inner .item::before {
+    background: none;
+}
+
+#maincontent .tag-line-wrapper {
+    top: 40%;
+}
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line {
+    font-size: 0;
+}
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-1::before,
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-2::before,
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before  {
+    display:none;
+}
+.tag1 {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 9vw;
+}
+.tag2, .tag3 {
+    font-size: calc(10px + 1vw);
+    font-family: 'Montserrat';
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.tag2{
+    font-weight: bold;
+    letter-spacing: calc(2px + 1vw);
+    font-size: calc(11px + 1vw);
+    line-height: 0;
+}
+
+/* <-------------------------scroll-----------------------------> */
+#homepage .scroll-btn-wrapper .vertical-line {
+    background: #a3bbc4;
+}
+/* <-------------------------headings-----------------------------> */
+
+#maincontent .romance-para-section .data-wrapper h2,
+body .section .section-sub-header,
+.sub-head {
+    color: #141d29;
+    font-family: 'PLAYFAIR DISPLAY';
+    font-size: calc(40px + 1vw)!important;
+    margin: 0px;
+    line-height: calc(40px + 1vw)!important;
+}
+
+#maincontent .romance-para-section .data-wrapper h1,
+.sub-head{
+    color: #a3bbc3;
+}
+#maincontent .romance-para-section .data-wrapper h1 {
+    font-family: 'Montserrat';
+    font-size: calc(9px + 1vw);
+    letter-spacing: calc(1px + 0.5vw);
+    margin: 0px;
+    line-height: calc(40px + 1vw)!important;
+}
+body .section .section-title-wrapper .section-title {
+    font-size: calc(3px + 5vw)!important;
+    line-height: 0px;
+    font-family: 'PLAYFAIR DISPLAY';
+}
+
+/* <-------------------------footer-----------------------------> */
+footer {
+    padding: 0;
+}
+footer .data-wrapper {
+    background: #141d29;
+    color: #fff;
+    letter-spacing: 2px;
+}
+footer .data-wrapper #footer-links .nav-list li .footerlinks {
+    color: #fff;
+}
+footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
+    border-top: 2px solid #a3bbc3;
+    border-bottom: 2px solid #a3bbc3;
+}
+/* <-------------------------mobile-----------------------------> */
+
+/* hamburger */
+.main-header .header-wrapper a {
+    color: #fff;
+}
+#MenuButtonHolder{
+    border: 1px solid #fff;
+}

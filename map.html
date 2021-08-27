@@ -1,0 +1,160 @@
+<style>
+    /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+    #map {
+      height: 100%;
+    }
+  
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .adp,
+    .adp table {
+      font-family: 'Montserrat';
+      font-weight: bold;
+      color: #2C2C2C;
+      width: 100%;
+    }
+  
+    .controls {
+      margin-top: 10px;
+      border: 1px solid transparent;
+      border-radius: 2px 0 0 2px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      height: 32px;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+  
+    #origin-input,
+    #destination-input {
+      background-color: #fff;
+      font-family: 'Poppins';
+      font-size: 15px;
+      font-weight: 300;
+      margin-left: 12px;
+      padding: 0 11px 0 13px;
+      text-overflow: ellipsis;
+      width: 200px;
+    }
+  
+    #origin-input:focus,
+    #destination-input:focus {
+      border-color: #5194b8;
+    }
+  </style>
+  <script>
+  
+  $('title').text(function (index, text) { return text.replace('Station Bay | Apartments in South Amboy, NJ | RENTCafe', 'Map & Directions'); });
+  $(document).ajaxComplete(function () {
+    $('title').text(function (index, text) { return text.replace('Station Bay | Apartments in South Amboy, NJ | RENTCafe', 'Map & Directions'); });
+  });
+  
+  
+    const myLatLng = { lat: 40.4900694, lng: -74.2817293 };
+    function initMap() {
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const directionsService = new google.maps.DirectionsService();
+      const map = new google.maps.Map(document.getElementById("map"), {
+        mapTypeControl: false,
+        zoom: 16,
+        center: myLatLng,
+        mapId: "892d9dde9f6dc82e",
+        disableDefaultUI: true,
+      });
+      const image = "https://cdngeneral.rentcafe.com/dmslivecafe/2/70799/logo-map-outer-glow.png";
+      new google.maps.Marker({
+        position: myLatLng,
+        map,
+        icon: image,
+      });
+      new AutocompleteDirectionsHandler(map);
+    }
+  
+    class AutocompleteDirectionsHandler {
+      map;
+      originPlaceId;
+      destinationPlaceId;
+      travelMode;
+      directionsService;
+      directionsRenderer;
+      constructor(map) {
+        this.map = map;
+        this.originPlaceId = "";
+        this.travelMode = "DRIVING";
+        const originInput = document.getElementById("origin-input");
+  
+        //These 4 lines render the written directions
+        this.directionsService = new google.maps.DirectionsService();
+        this.directionsRenderer = new google.maps.DirectionsRenderer();
+        this.directionsRenderer.setMap(map);
+        this.directionsRenderer.setPanel(document.getElementById("sidebar"));
+  
+        const originAutocomplete = new google.maps.places.Autocomplete(originInput);
+        // Specify just the place data fields that you need.
+        originAutocomplete.setFields(["place_id"]);
+        this.setupPlaceChangedListener(originAutocomplete, "ORIG");
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+      }
+      setupPlaceChangedListener(autocomplete, mode) {
+        autocomplete.bindTo("bounds", this.map);
+        autocomplete.addListener("place_changed", () => {
+          const place = autocomplete.getPlace();
+  
+          if (!place.place_id) {
+            window.alert("Please select an option from the dropdown list.");
+            return;
+          }
+  
+          this.originPlaceId = place.place_id;
+          this.route();
+  
+        });
+      }
+      route() {
+        if (!this.originPlaceId) {
+          return;
+        }
+        const me = this;
+        this.directionsService.route(
+          {
+            origin: { placeId: this.originPlaceId },
+            destination: myLatLng,
+            travelMode: this.travelMode,
+          },
+          (response, status) => {
+            if (status === "OK") {
+              me.directionsRenderer.setDirections(response);
+            } else {
+              window.alert("Directions request failed due to " + status);
+            }
+          }
+        );
+      }
+    }
+  
+  </script>
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  
+  
+  <h1>Get Directions</h1>
+  
+  <div id="controls">
+    <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location" />
+  
+  </div>
+  
+  <div id="map"></div>
+  <div id="sidebar"></div>
+  
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoBkPWmTk-mrqAFR6s5ptuiW87wiuryCI&q=place_id:ChIJpeRtzuPNw4kRjBdUV1UsENM&callback=initMap&libraries=places&v=weekly"
+    async></script>
