@@ -23,6 +23,10 @@ body h4 {
     background: #a3bac3 !important;
 }
 
+a:focus, button:focus {
+    outline: none!important;
+}
+
 /* <-------------------------logo-----------------------------> */
 
 .main-header .header-wrapper #logo-container img {
@@ -89,7 +93,11 @@ span.burger {
     right: 0;
 }
 .main-header #navwrapper::before {
-    background: #003c5b;
+    background: #141d29;
+}
+
+.main-header #navwrapper .navbar .navbar-inner {
+    margin-left: 30%;
 }
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
 .main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
@@ -102,7 +110,7 @@ span.burger {
     color: #fff;
     text-transform: uppercase;
     font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
+    font-size: calc(20px + 2vw);
 }
 
 .main-header #navwrapper .navbar .navbar-inner .nav>li:hover {
@@ -141,7 +149,7 @@ span.burger {
 .tag1 {
     font-family: 'Playfair Display', serif;
     color: #fff;
-    font-size: 4vw;
+    font-size: calc(22px + 4vw);
 }
 .tag2, .tag3 {
     font-size: calc(10px + 1vw);
@@ -332,6 +340,11 @@ body .section .section-title-wrapper .section-title {
 footer {
     padding: 0;
 }
+footer a,
+footer a:visited,
+footer a:focus {
+    color: #fff;
+}
 footer .data-wrapper {
     background: #141d29;
     color: #fff;
@@ -343,6 +356,9 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks {
 footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
     border-top: 2px solid #a3bbc3;
     border-bottom: 2px solid #a3bbc3;
+}
+#copyright {
+    display:none;
 }
 /* <-------------------------mobile-----------------------------> */
 
@@ -380,4 +396,19 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
         width: 100vw;
         height: 100vh;
       }
+
+      #navwrapper #headermenuwrapper #HomeMenu {
+        background: #141d29;
+    }
+    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li a {
+        font-family: 'Playfair Display';
+        text-transform: uppercase;
+        color: #fff;
+    }
+    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li.active:not(.hasActiveChild)>a {
+        border-left: 3px solid #a3bbc3;
+    }
+    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner .close-btn {
+        filter: none;
+    }
 }

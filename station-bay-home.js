@@ -16,6 +16,14 @@ $(document).ajaxComplete(function () {
   $('#ctmcontentcontainer h1').text(function (index, text) { return text.replace('Station Bay', 'THE WATERFRONT'); });
 });
 
+
+const currentYear = new Date().getFullYear();
+console.log(currentYear)
+
+$('.copyright').append('<div id="new-copyright"><br /> © ' + currentYear + ' BNE Real Estate Group.  All Rights Reserved.<br />Web Design by <a href="https://scibettas1.github.io/#/" target="_blank">Sam Scibetta</a><div>');
+
+
+
 $('#map-canvas').append('<div id="map"><iframe width="100%" height="450" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoBkPWmTk-mrqAFR6s5ptuiW87wiuryCI&q=place_id:ChIJpeRtzuPNw4kRjBdUV1UsENM" allowfullscreen></iframe></div>');
 
 function initMap() {

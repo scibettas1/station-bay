@@ -165,6 +165,13 @@ body h1 {
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
 }
+body h2 {
+    color: #141d29;
+    font-family: 'PLAYFAIR DISPLAY';
+    /* font-size: calc(40px + 1vw)!important;
+    margin: 0px;
+    line-height: calc(40px + 1vw)!important; */
+}
 
 #maincontent .romance-para-section .data-wrapper h1 {
     font-family: 'Montserrat';
@@ -178,10 +185,18 @@ body .section .section-title-wrapper .section-title {
     line-height: 0px;
     font-family: 'PLAYFAIR DISPLAY';
 }
+.sub-head{
+    color: #a3bbc3;
+}
 
 /* <-------------------------footer-----------------------------> */
 footer {
     padding: 0;
+}
+footer a,
+footer a:visited,
+footer a:focus {
+    color: #fff;
 }
 footer .data-wrapper {
     background: #141d29;
@@ -194,6 +209,9 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks {
 footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
     border-top: 2px solid #a3bbc3;
     border-bottom: 2px solid #a3bbc3;
+}
+#copyright {
+    display:none;
 }
 /* <-------------------------mobile-----------------------------> */
 
