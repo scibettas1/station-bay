@@ -93,7 +93,11 @@ span.burger {
     right: 0;
 }
 .main-header #navwrapper::before {
-    background: #003c5b;
+    background: #141d29;
+}
+
+.main-header #navwrapper .navbar .navbar-inner {
+    margin-left: 30%;
 }
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
 .main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
@@ -106,7 +110,7 @@ span.burger {
     color: #fff;
     text-transform: uppercase;
     font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
+    font-size: calc(20px + 2vw);
 }
 
 .main-header #navwrapper .navbar .navbar-inner .nav>li:hover {
@@ -253,5 +257,20 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
       }
     .container {
         background: white;
+    }
+    
+    #navwrapper #headermenuwrapper #HomeMenu {
+        background: #141d29;
+    }
+    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li a {
+        font-family: 'Playfair Display';
+        text-transform: uppercase;
+        color: #fff;
+    }
+    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li.active:not(.hasActiveChild)>a {
+        border-left: 3px solid #a3bbc3;
+    }
+    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner .close-btn {
+        filter: none;
     }
 }
