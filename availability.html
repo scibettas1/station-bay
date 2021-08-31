@@ -1,0 +1,13 @@
+<script> 
+
+$('title').text(function (index, text) { return text.replace('Floor Plans of Station Bay in South Amboy, NJ', 'Station Bay | Availability'); });
+  $(document).ajaxComplete(function () {
+    $('title').text(function (index, text) { return text.replace('Floor Plans of Station Bay in South Amboy, NJ', 'Station Bay | Availability'); });
+  });
+
+$('#mainformcontainer h1').text(function (index, text) { return text.replace('Floor Plans', 'Availability'); });
+  $(document).ajaxComplete(function () {
+    $('#mainformcontainer h1').text(function (index, text) { return text.replace('Floor Plans', 'Availability'); });
+  });
+
+</script>

@@ -22,7 +22,15 @@ body h4 {
     border-color: #a3bac3 !important;
     background: #a3bac3 !important;
 }
-
+#maincontent .tag-line-wrapper .btn-wrapper .btn-primary::after,
+#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .btn-wrapper .btn-primary::after,
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper .btn-primary::after,
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .btn-wrapper .btn-primary::after,
+.address-wrapper .wrapper .btn-wrapper .btn-primary::after {
+    font-size: 16px;
+    line-height: 2.5;
+    padding: 10px;
+}
 a:focus, button:focus {
     outline: none!important;
 }
@@ -93,15 +101,25 @@ span.burger {
     right: 0;
 }
 .main-header #navwrapper::before {
-    background: #141d29;
+    background: #081029;
 }
 
 .main-header #navwrapper .navbar .navbar-inner {
     margin-left: 30%;
 }
+.main-header #navwrapper .navbar .navbar-inner .nav>li {
+    margin: 0;
+}
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
 .main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
     border-left: 3px solid #a3bbc4;
+    padding: 0px 50px;
+}
+.main-header #navwrapper .navbar .navbar-inner .nav>li>a {
+    padding: 0px 50px;
+}
+.main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
+    padding-left: 47px;
 }
 
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active,
@@ -134,9 +152,8 @@ span.burger {
 #maincontent .top-slider-wrapper #image-slider .carousel-inner .item::before {
     background: none;
 }
-
 #maincontent .tag-line-wrapper {
-    top: 50%;
+    top: 32%;
 }
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line {
     font-size: 0;
@@ -193,7 +210,7 @@ body .section .section-sub-header,
     line-height: calc(40px + 1vw)!important;
 }
 body .section .section-title-wrapper .section-title {
-    font-size: calc(3px + 5vw)!important;
+    font-size: calc(2px + 5vw)!important;
     line-height: 0px;
     font-family: 'PLAYFAIR DISPLAY';
 }
@@ -242,6 +259,9 @@ body .section .section-title-wrapper .section-title {
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-para::before {
     content: "Pursue your passions in a resort-like setting where luxury amenities extend from indoors to out, offering indulgent escapes as well as practical solutions to work, eat, relax, entertain, exercise, and so much more. Our curated selection of shared spaces set against a bay front panorama make coming home feel like an every day vacation.";
 }
+#maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .btn-wrapper .btn-primary::after {
+    content: "EXPLORE AMENITIES";
+}
 #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg) top left no-repeat;
     background-size: cover;
@@ -279,6 +299,9 @@ body .section .section-title-wrapper .section-title {
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para::before {
     content: "Moments from South Amboy’s Train Station and upcoming Ferry Terminal, our location provides unparalleled convenience, allowing you to access Manhattan in minutes while still surrounded by parks, playgrounds, and the tree-lined streets of a suburban enclave – just steps from downtown. Conveniently connected yet blissfully serene, our incredible location is the best of both worlds.";
+}
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper .btn-primary::after {
+    content: "NEIGHBORHOOD & DIRECTIONS";
 }
 /* images */
 /* top left */
@@ -324,10 +347,18 @@ body .section .section-title-wrapper .section-title {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg);
     background-size: cover;
 }
-/* #maincontent .romance-para-section .adv-images-wrapper .img.image-2 {
-    background: url(../images/stylish_homes_2.jpg);
+#maincontent .romance-para-section .adv-images-wrapper .img.image-2 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg);
     background-size: cover;
-} */
+}
+/* <-------------------------contact-----------------------------> */
+
+#maincontent .contact-us-section .section-data-wrapper .image-wrapper .img {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1701296233.jpg) center center no-repeat;
+    background-size: cover;
+
+}
+
 /* <-------------------------map-----------------------------> */
 #marketing-map {
     display:none;
@@ -397,8 +428,8 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
         height: 100vh;
       }
 
-      #navwrapper #headermenuwrapper #HomeMenu {
-        background: #141d29;
+    #navwrapper #headermenuwrapper #HomeMenu {
+        background: #081029;
     }
     #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li a {
         font-family: 'Playfair Display';

@@ -93,15 +93,25 @@ span.burger {
     right: 0;
 }
 .main-header #navwrapper::before {
-    background: #141d29;
+    background: #081029;
 }
 
 .main-header #navwrapper .navbar .navbar-inner {
     margin-left: 30%;
 }
+.main-header #navwrapper .navbar .navbar-inner .nav>li {
+    margin: 0;
+}
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
 .main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
     border-left: 3px solid #a3bbc4;
+    padding: 0px 50px;
+}
+.main-header #navwrapper .navbar .navbar-inner .nav>li>a {
+    padding: 0px 50px;
+}
+.main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
+    padding-left: 47px;
 }
 
 .main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active,
@@ -260,7 +270,7 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
     }
     
     #navwrapper #headermenuwrapper #HomeMenu {
-        background: #141d29;
+        background: #081029;
     }
     #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li a {
         font-family: 'Playfair Display';

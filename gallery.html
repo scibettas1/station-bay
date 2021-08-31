@@ -1,0 +1,14 @@
+<script> 
+
+$('title').text(function (index, text) { return text.replace('Photos and Video of Station Bay in South Amboy, NJ', 'Station Bay | Photo Gallery'); });
+  $(document).ajaxComplete(function () {
+    $('title').text(function (index, text) { return text.replace('Photos and Video of Station Bay in South Amboy, NJ', 'Station Bay | Photo Gallery'); });
+  });
+
+</script>
+<style>
+.photogallery #gallery a:focus i,
+.slide a:focus i {
+   outline:none!important;
+}
+</style>
