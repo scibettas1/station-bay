@@ -22,6 +22,11 @@ body h4 {
     border-color: #a3bac3 !important;
     background: #a3bac3 !important;
 }
+#maincontent .tag-line-wrapper .btn-wrapper .btn-primary::after {
+    font-size: 16px;
+    line-height: 2.5;
+    padding: 10px;
+}
 /* <-------------------------lists-----------------------------> */
 li {
     font-weight: 100;
