@@ -21,27 +21,17 @@
     overflow: auto;
     width: fit-content
 }
-.amenity_description1 {
-	width:45%;
-	float: right;
-	text-align: left;
-	padding: 10px;
+img {
+    box-shadow: 3px 3px 9px #0000002b;
 }
-.amenity_description2 {
-	width:45%;
-	float: left;
-	text-align: left;
-	padding: 10px;
+.mason-row {
+    padding: 0px 0px 25px;
 }
-.amenity_description3 {
-	width:100%;
-        float: left;
-	text-align: left;
-	padding: 10px;
+#img500a {
+    max-height: 445px;
+    width: 100%;
 }
-.description {
-  min-height: 252px;
-}
+
 @media (max-width: 680px){
     .amenity_description1,  .amenity_description2 {
     width:100%;
@@ -51,7 +41,7 @@
     left: 0px;
   }
   #lifestyle {
-    margin-left: 200px;
+    margin-left: 0px;
 }
 }
 </style>
@@ -63,9 +53,9 @@ $(document).ajaxComplete(function () {
 </script>
 <div class="container">
 <h1>FEATURES &amp; AMENITIES</h1>
-<br />
+<br /><br />
 <p>Surround yourself in a resort-like setting where indulgent indoor and outdoor amenities offer endless opportunity for entertainment, relaxation, work-from-home productivity, and unmatched convenience.</p>
-<br />
+<br /><br />
 &nbsp; &nbsp;
 <section id="lifestyle">
     <div id="lifestyle-description">
@@ -94,47 +84,75 @@ $(document).ajaxComplete(function () {
 </section>
 
 <section>
-<hr />&nbsp;
-<h1>RESIDENCE 
-    <p class="sub-head">FEATURES</p></h1>
+    <br /><br />&nbsp;
+    <h1>MODERN 
+    <p class="sub-head">RESIDENCES</p></h1>
+        <br /><br />
+    <div class="row-fluid">
+        <div class="span4">
+            <i>The Kitchen</i>
+            <ul class="amenities-list"><br />
+                <li>Stainless steel appliances</li>
+                <li>Gas Range &amp; side-by-side refrigerator</li>
+                <li>Gray quartz counter tops</li>
+                <li>Full height tiled back splash</li>
+                <li>White cabinetry</li>
+                <li>Custom wine storage</li>
+            </ul>
+        </div>
+        <div class="span4">
+            <i>The Living Area</i>
 
-<div class="amenity_description2"><br />
-<i>The Kitchen</i>
-
-<ul class="amenities-list"><br />
-<li>Stainless steel appliances</li>
-<li>Gas Range &amp; side-by-side refrigerator</li>
-<li>White quartz counter tops</li>
-<li>Full height tiled back splash</li>
-<li>Esresso cabinetry</li>
-<li>Custom wine storage</li>
-</ul>
-<br />
-<img class="img-margin" height="auto" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/untitled-73.jpg" width="100%" /></div>
-
-<div class="amenity_description1"><br />
-<i>The Living Area</i>
-
-<ul class="amenities-list"><br />
-<li>9&#39; Ceilings</li>
-<li>Luxury Plank flooring</li>
-<li>Custom modular closets</li>
-<li>Complimentary window treatments</li>
-<li>In-home washer &amp; dryer</li>
-<li>Private outdoor space available</li>
-</ul>
-<br />
-<img class="img-margin" height="auto" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/untitled-77.jpg" width="100%" /></div>
-</section>
-
-<section>&nbsp;
-<div class="amenity_description3"><i>The Bathroom</i>
-
-<ul class="amenities-list"><br />
-<li>White Quartz countertops</li>
-<li>Full-height tiled wet walls</li>
-<li>Espresso vanities</li>
-</ul>
+            <ul class="amenities-list"><br />
+                <li>9&#39; Ceilings</li>
+                <li>Luxury Plank flooring</li>
+                <li>Custom modular closets</li>
+                <li>Complimentary window treatments</li>
+                <li>In-home washer &amp; dryer</li>
+                <li>Balconies &amp; Patios available</li>
+            </ul>
+        </div>
+        <div class="span4">
+            <i>The Bathroom</i>
+            <ul class="amenities-list"><br />
+                <li>Gray Quartz countertops</li>
+                <li>Full-height tiled wet walls</li>
+                <li>White vanities</li>
+            </ul>
+        </div>
+    </div>
+    <br /><br />
+[this area will eventually have a "masonry block" layout of photos when we have them]
+<div id="image-blocks">
+    <div class="row-fluid">
+        <div class="span8">
+            <div class="row-fluid mason-row">
+                <div class="span6">
+                    <img id="img400" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-400.png"/>
+                </div>
+                <div class="span6">
+                    <img id="img400" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-400.png"/>
+                </div>
+            </div>
+            <div class="row-fluid mason-row">
+                <div class="span12">
+                    <img id="img500a" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500a.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="span4">
+            <img id="img900" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-900.png"/>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <img id="img500b" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500b.png" />
+        </div>
+        <div class="span6">
+            <img id="img500b" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500b.png" />
+        </div>
+    </div>
 </div>
 </section>
+
 </div>
