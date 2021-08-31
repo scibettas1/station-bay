@@ -15,7 +15,6 @@ body h4 {
     top: 0;
     left: 0;
   }
-
 a {
     color: #141d29;
 }
@@ -28,20 +27,6 @@ body a:hover {
 .btn.btn-primary.btn-banner:hover {
     border-color: #a3bac3 !important;
     background: #a3bac3 !important;
-}
-#maincontent .tag-line-wrapper .btn-wrapper .btn-primary::after {
-    font-size: 16px;
-    line-height: 2.5;
-    padding: 10px;
-}
-/* submit button on contact us page */
-.ole_fancy_form .btn.btn-fancy::before {
-    border: 0px solid #fff;
-    background: transparent!important;
-}
-/* <-------------------------lists-----------------------------> */
-li {
-    font-weight: 100;
 }
 
 /* <-------------------------logo-----------------------------> */
@@ -58,11 +43,6 @@ li {
     background-size: cover; */
     background: transparent;
 }
-/* temporary code so I can see the links while i'm designing */
-/* .hidden {
-    display: inline-block!important;
-    visibility: visible!important;
-} */
 .main-header .header-wrapper .right-nav-links-wrapper #login-links ul #rpdiv a::before {
     content: "LOGIN";
 }
@@ -95,64 +75,21 @@ li {
     border-top: 2px solid #a3bbc4;
     border-bottom: 2px solid #a3bac3;
 }
-/* <-------------------------navigation-----------------------------> */
-
-span.burger {
+#rentcafe_residentportal .main-header .header-wrapper .right-nav-links-wrapper .lbl-resident-portal::after,
+#rentcafe_onlineleasing .main-header .header-wrapper .right-nav-links-wrapper .lbl-applicatnt-portal::after {
+    font-family: 'Playfair Display';
     color: #fff;
-}
-.main-header .header-wrapper .lbl-navcheck .burger::before,
-.main-header .header-wrapper .lbl-navcheck .burger .bar,
-.main-header .header-wrapper .lbl-navcheck .burger::after {
-    background-color: #fff!important;
+    font-size: 39px;
 }
 
-.main-header #navwrapper .navbar {
-    right: 0;
-}
-.main-header #navwrapper::before {
-    background: #081029;
-}
-
-.main-header #navwrapper .navbar .navbar-inner {
-    margin-left: 30%;
-}
-.main-header #navwrapper .navbar .navbar-inner .nav>li {
-    margin: 0;
-}
-.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a,
-.main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
-    border-left: 3px solid #a3bbc4;
-    padding: 0px 50px;
-}
-.main-header #navwrapper .navbar .navbar-inner .nav>li>a {
-    padding: 0px 50px;
-}
-.main-header #navwrapper .navbar .navbar-inner .nav>li:hover>a{
-    padding-left: 47px;
-}
-
-.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active,
-.main-header #navwrapper .navbar .navbar-inner .nav>li,
-.main-header .chk-navcheck:checked~#navwrapper .navbar .navbar-inner .nav>li.active>a:hover {
-    color: #fff;
-    text-transform: uppercase;
-    font-family: 'Playfair Display', serif;
-    font-size: calc(20px + 2vw);
-}
-
-.main-header #navwrapper .navbar .navbar-inner .nav>li:hover {
-    background: #003c5b;
-    color: #fff;
-}
 /* <-------------------------BANNER-----------------------------> */
 #innerpage #maincontent .banner-wrapper #banner::after, 
 #rentcafe_residentportal #maincontent .banner-wrapper #banner::after, 
 #rentcafe_onlineleasing #maincontent .banner-wrapper #banner::after {
     background: transparent;
 }
-
 #maincontent {
-    margin-top: 152px!important;
+    background: #fff;
 }
 .maincontent, .container-fluid {
     padding: 0!important;
@@ -183,14 +120,6 @@ span.burger {
     line-height: 0;
 }
 
-/* <-------------------------scroll-----------------------------> */
-#homepage .scroll-btn-wrapper .vertical-line {
-    background: #a3bbc4;
-}
-/* <-------------------------content for contact us page-----------------------------> */
-a.click_to_call_href {
-    font-family: 'Montserrat';
-}
 /* <-------------------------headings-----------------------------> */
 
 body h1 {
@@ -203,9 +132,7 @@ body h1 {
 body h2 {
     color: #141d29;
     font-family: 'PLAYFAIR DISPLAY';
-    /* font-size: calc(40px + 1vw)!important;
-    margin: 0px;
-    line-height: calc(40px + 1vw)!important; */
+    text-transform: uppercase;
 }
 
 #maincontent .romance-para-section .data-wrapper h1 {
@@ -219,9 +146,6 @@ body .section .section-title-wrapper .section-title {
     font-size: calc(3px + 5vw)!important;
     line-height: 0px;
     font-family: 'PLAYFAIR DISPLAY';
-}
-.sub-head{
-    color: #a3bbc3;
 }
 
 /* <-------------------------footer-----------------------------> */
@@ -288,20 +212,5 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
       }
     .container {
         background: white;
-    }
-    
-    #navwrapper #headermenuwrapper #HomeMenu {
-        background: #081029;
-    }
-    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li a {
-        font-family: 'Playfair Display';
-        text-transform: uppercase;
-        color: #fff;
-    }
-    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner li.active:not(.hasActiveChild)>a {
-        border-left: 3px solid #a3bbc3;
-    }
-    #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner .close-btn {
-        filter: none;
     }
 }
