@@ -42,10 +42,10 @@ li {
     background: transparent;
 }
 /* temporary code so I can see the links while i'm designing */
-.hidden {
+/* .hidden {
     display: inline-block!important;
     visibility: visible!important;
-}
+} */
 .main-header .header-wrapper .right-nav-links-wrapper #login-links ul #rpdiv a::before {
     content: "LOGIN";
 }

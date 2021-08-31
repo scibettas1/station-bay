@@ -6,3 +6,9 @@ const currentYear = new Date().getFullYear();
 console.log(currentYear)
 
 $('.copyright').append('<div id="new-copyright"><br /> © ' + currentYear + ' BNE Real Estate Group.  All Rights Reserved.<br />Web Design by <a href="https://scibettas1.github.io/#/" target="_blank">Sam Scibetta</a><div>');
+
+
+$('title').text(function (index, text) { return text.replace('Contact Station Bay to Schedule a Visit', 'Station Bay | Contact Us'); });
+  $(document).ajaxComplete(function () {
+    $('title').text(function (index, text) { return text.replace('Contact Station Bay to Schedule a Visit', 'Station Bay | Contact Us'); });
+  });
