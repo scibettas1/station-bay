@@ -2,7 +2,7 @@ $('.main-header').append('<div><video id="video-bg" autoplay muted loop ><source
 
 $('.tag-line').append('<div><p class="tag2">DESTINATION:</p><p class="tag1">EXTRAORDINARY</p><p class="tag3">New Studio, 1 & 2 Bedroom Waterfront Rentals in South Amboy, NJ</p></div>');
 
-// $('.tag-line-wrapper').append('<div><i class="fa-solid fa-arrow-down-long"></i></div>');
+$('.tag-line-wrapper').append('<div><img class="arrow animated bounce" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/arrow-circle.png?w=100&h=100" /></div>');
 
 $('.amenities-section .section-sub-header').append('<div><p class="sub-head">THE JOURNEY</p><br /></div>');
 

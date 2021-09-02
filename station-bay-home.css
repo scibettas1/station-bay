@@ -153,7 +153,7 @@ span.burger {
     background: none;
 }
 #maincontent .tag-line-wrapper {
-    top: 32%;
+    top: 45%;
 }
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line {
     font-size: 0;
@@ -181,6 +181,37 @@ span.burger {
     font-size: calc(11px + 1vw);
     line-height: 0;
 }
+/* <-------------------------arrow animations-----------------------------> */
+.arrow {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 11vh;
+}
+.animated { 
+    /* margin-bottom:60px; */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+ }
+ 
+ @-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-30px);} 
+    60% {-webkit-transform: translateY(-15px);} 
+ } 
+ 
+ @keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ }
+ 
+ .bounce { 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
+ }
 
 /* <-------------------------scroll-----------------------------> */
 #homepage .scroll-btn-wrapper .vertical-line {
@@ -441,5 +472,25 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
     }
     #navwrapper #headermenuwrapper #HomeMenu .offcanvas_navbar-inner .close-btn {
         filter: none;
+    }
+    .arrow {
+        margin-top: 6vh;
+    }
+}
+
+/* for old iPhones including the iphone 5 and original SE */
+@media (max-width: 330px) {
+    #maincontent .tag-line-wrapper {
+        top: 40%;
+    }
+    #maincontent .tag-line-wrapper .tagline-section .header-wrapper {
+        margin: 0 0%;
+    }
+    #maincontent .tag-line-wrapper .tagline-section {
+        margin-bottom: 0px;
+    }
+    .arrow {
+        margin-top: 5vh;
+        max-width: 60px;
     }
 }
