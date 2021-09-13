@@ -1,11 +1,18 @@
 body {
     font-family: 'Montserrat';
     color: #606060;
-    font-weight: bold;
+    font-size: 16px;
 }
 body h4 {
     font-family: 'Montserrat';
+}p,
+.address-wrapper .wrapper .section-para::before,
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para,
+#maincontent .romance-para-section .data-wrapper p {
+    font-size: 16px;
 }
+
+
 #video-bg {
     position: absolute;
     object-fit: cover;
@@ -163,6 +170,10 @@ span.burger {
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before  {
     display:none;
 }
+#maincontent .tag-line-wrapper .btn-wrapper .btn-primary::after {
+    content: "AVAILABILITY";
+    letter-spacing: 2px;
+}
 .tag1 {
     font-family: 'Playfair Display', serif;
     color: #fff;
@@ -214,8 +225,11 @@ span.burger {
  }
 
 /* <-------------------------scroll-----------------------------> */
-#homepage .scroll-btn-wrapper .vertical-line {
+/* #homepage .scroll-btn-wrapper .vertical-line {
     background: #a3bbc4;
+} */
+#homepage .scroll-btn-wrapper {
+    display:none!important;
 }
 /* <-------------------------headings-----------------------------> */
 
@@ -263,17 +277,40 @@ body .section .section-title-wrapper .section-title {
         min-width: 525px;
     }   
 }
+@media (min-width: 1200px){
+    #homepage .container {
+        width: 100vw;
+    }
+}
 
 /* <-------------------------romance section -----------------------------> */
+
 #maincontent .romance-para-section .image-wrapper .image {
-    -webkit-box-shadow: 0 13px 0 #141D29;
+    -webkit-box-shadow: 0 13px 0 #6c7480;
     -moz-box-shadow: 0 13px 0 #141D29;
     box-shadow: 0 13px 0 #141D29;
     background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg);
     background-size: cover;
     background-position: center;
-    height: 660px;
-    width: 50vw;
+    height: 765px;
+    width: 100vw;
+}
+@media (min-width: 992px) {
+    #romance {
+        margin-bottom: -100px;
+    }
+    #maincontent .romance-para-section .data-wrapper {
+        top: 240px;
+    }
+    #maincontent .romance-para-section .image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        z-index: 1;
+    } 
+    #maincontent .romance-para-section .data-wrapper {
+        left: 25%;
+    }
 }
 
 /* <-------------------------amenities section-----------------------------> */
@@ -281,8 +318,12 @@ body .section .section-title-wrapper .section-title {
 #maincontent .amenities-section .section-title-wrapper .section-title::before {
     content: "FEATURES & AMENITIES";
 }
+#maincontent .amenities-section {
+    background: #fff;
+}
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper {
     padding: 50px 50px 42px 50px;
+    background: #f6f6f6;
 }
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-sub-header::before {
     content: "THE JOY IS IN";
@@ -294,17 +335,30 @@ body .section .section-title-wrapper .section-title {
     content: "EXPLORE AMENITIES";
 }
 #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg) top left no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg) center left no-repeat;
     background-size: cover;
 }
+#maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-2 {
+    display: none;
+}
+#maincontent .amenities-section .wrapper .image-wrapper .img {
+    width: 100%;
+    height: 765px;
+    max-width: none;
+}
+#maincontent .romance-para-section.stylish-homes-section .adv-images-wrapper .img {
+    width: 50%;
+}
 @media (min-width: 992px) {
-    #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-2 {
-        display: none;
+    #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
+        margin-right: 0;
     }
-    #maincontent .amenities-section .wrapper .image-wrapper .img {
-        width: 100%;
-        height: 615px;
-        max-width: none;
+    #maincontent .amenities-section .wrapper .image-wrapper {
+        top: 100px;
+    }
+    #maincontent .amenities-section .wrapper .data-wrapper {
+        right: 8%;
+        padding: 0;
     }
 }
 /* <-------------------------neighborrhood section -----------------------------> */
@@ -375,12 +429,19 @@ body .section .section-title-wrapper .section-title {
     content: "Come home to the waterfront and discover an impeccable collection of new luxury residences where views stretch to the horizon and spectacular studio, one, and two bedroom homes offer modern amenities with incredible style. Spacious and serene, with a seamless approach to daily life, you’ll find everything you’ve been searching for at Station Bay.";
 }
 #maincontent .romance-para-section .adv-images-wrapper .img.image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg);
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg) center center no-repeat;
     background-size: cover;
+    min-height: 600px;
 }
 #maincontent .romance-para-section .adv-images-wrapper .img.image-2 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg);
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg) center center no-repeat;
     background-size: cover;
+    min-height: 600px;
+}
+#maincontent .romance-para-section .adv-images-wrapper {
+    -webkit-box-shadow: 0 13px 0 #141D29;
+    -moz-box-shadow: 0 13px 0 #141D29;
+    box-shadow: 0 13px 0 #141D29;
 }
 /* <-------------------------contact-----------------------------> */
 
@@ -388,6 +449,9 @@ body .section .section-title-wrapper .section-title {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1701296233.jpg) center center no-repeat;
     background-size: cover;
 
+}
+.address-wrapper .wrapper .section-para {
+    margin-top: 50px;
 }
 
 /* <-------------------------map-----------------------------> */
