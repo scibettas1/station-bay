@@ -11,3 +11,40 @@ $('#mainformcontainer h1').text(function (index, text) { return text.replace('Fl
   });
 
 </script>
+<style>
+h3#filtersModalLabel,
+input[type=file], 
+select {
+    font-family: 'Montserrat';
+}
+
+  #filter-item-show-advanced a,
+  .buttonCheckbox input[type=checkbox]+label:hover, 
+  .buttonRadios input[type=radio]+label:hover,
+  #filtersModal .modal-header .resetFilters,
+  .btn.btn-blank.fp-btn-cancelFilters:active, 
+  .btn.btn-blank.fp-btn-cancelFilters:focus, 
+  .btn.btn-blank.fp-btn-cancelFilters:hover,
+  .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark:before,
+  .bootstrap-select .dropdown-menu>li>a:hover, 
+  .dropdown-menu>li>a:focus, 
+  .dropdown-submenu:focus>a, 
+  .dropdown-submenu:hover>a  {
+    color: #141d29;
+}
+.buttonRadios input[type=radio]:checked+label,
+.buttonCheckbox input[type=checkbox]:checked+label, 
+.buttonRadios input[type=radio]:checked+label,
+option:hover {
+  background-color:#141d29;
+}
+.buttonRadio-label:focus,
+.noUi-handle.noUi-handle-lower:focus,
+.buttonCheckbox-label:focus,
+.noUi-handle.noUi-handle-upper:focus {
+    outline-color: #141d29;
+}
+.fp-filter-slider .noUi-connect {
+    background:#141d29!important;
+}
+</style>

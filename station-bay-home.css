@@ -242,7 +242,6 @@ body .section .section-sub-header,
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
 }
-
 #maincontent .romance-para-section .data-wrapper h1,
 .sub-head{
     color: #a3bbc3;
@@ -258,10 +257,22 @@ body .section .section-title-wrapper .section-title {
     font-size: calc(2px + 5vw)!important;
     line-height: 0px;
     font-family: 'PLAYFAIR DISPLAY';
+    color: #a3bbc3;
+}
+
+#maincontent .amenities-section .section-title-wrapper,
+#maincontent .romance-para-section.stylish-homes-section .section-title-wrapper {
+    right: 5%;
+}
+#maincontent .contact-us-section .section-title-wrapper,
+#maincontent .neighbourhood-section .section-title-wrapper {
+    left: 0;
 }
 
 /* <-------------------------containers-----------------------------> */
-
+#homepage .container {
+    width: 100vw;
+}
 #maincontent .romance-para-section .data-wrapper,
 #maincontent .amenities-section .wrapper .data-wrapper {
     height: fit-content;
@@ -277,11 +288,7 @@ body .section .section-title-wrapper .section-title {
         min-width: 525px;
     }   
 }
-@media (min-width: 1200px){
-    #homepage .container {
-        width: 100vw;
-    }
-}
+
 
 /* <-------------------------romance section -----------------------------> */
 
@@ -362,10 +369,15 @@ body .section .section-title-wrapper .section-title {
     }
 }
 /* <-------------------------neighborrhood section -----------------------------> */
+
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-sub-header::before {
     content: "DEPART FOR A";
 }
 @media (min-width: 992px){
+    #maincontent .amenities-section .wrapper .image-wrapper {
+        top: 100px;
+        margin-bottom: -175px;
+    }
     .col-md-6 {
         width: 40%;
     }
@@ -383,7 +395,7 @@ body .section .section-title-wrapper .section-title {
     }
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para::before {
-    content: "Moments from South Amboy’s Train Station and upcoming Ferry Terminal, our location provides unparalleled convenience, allowing you to access Manhattan in minutes while still surrounded by parks, playgrounds, and the tree-lined streets of a suburban enclave – just steps from downtown. Conveniently connected yet blissfully serene, our incredible location is the best of both worlds.";
+    content: "Unparalleled convenience, allowing you easy access to-and-from Manhattan while still being surrounded by parks and the tree-lined streets of a suburban enclave — just steps from downtown. Seamlessly connected yet blissfully serene... ";
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper .btn-primary::after {
     content: "NEIGHBORHOOD & DIRECTIONS";
@@ -452,6 +464,12 @@ body .section .section-title-wrapper .section-title {
 }
 .address-wrapper .wrapper .section-para {
     margin-top: 50px;
+}
+.address-wrapper .wrapper .section-para::before {
+    content: "Interested in visiting our community? Reach out and schedule your tour today!";
+}
+.horizontal#address span[itemprop=address]:after {
+    content: "| Located off of Radford Ferry Road   |";
 }
 
 /* <-------------------------map-----------------------------> */

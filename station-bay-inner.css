@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat';
     color: #606060;
-    font-weight: bold;
+    font-size: 16px;
 }
 body h4 {
     font-family: 'Montserrat';
@@ -165,10 +165,12 @@ span.burger {
 }
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-1::before,
 #maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-2::before,
-#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before  {
+#maincontent .tag-line-wrapper .tagline-section .header-wrapper .tag-line .part-3::before,
+#maincontent .tag-line-wrapper   {
     display:none;
 }
-.tag1 {
+
+/* .tag1 {
     font-family: 'Playfair Display', serif;
     color: #141d29;
     font-size: calc(22px + 4vw);
@@ -181,7 +183,7 @@ span.burger {
     letter-spacing: calc(2px + 1vw);
     font-size: calc(11px + 1vw);
     line-height: 0;
-}
+} */
 
 /* <-------------------------scroll-----------------------------> */
 #homepage .scroll-btn-wrapper .vertical-line {
@@ -224,6 +226,11 @@ body .section .section-title-wrapper .section-title {
     color: #a3bbc3;
 }
 
+
+
+.horizontal#address span[itemprop=address]:after {
+    content: "| Located off of Radford Ferry Road |";
+}
 /* <-------------------------footer-----------------------------> */
 footer {
     padding: 0;
