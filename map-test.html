@@ -1,268 +1,314 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Locator</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://www.gstatic.com/external_hosted/handlebars/v4.7.6/handlebars.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+<script>
+
+  $('title').text(function (index, text) { return text.replace('Station Bay | Custom Page', 'Station Bay | Neighborhood'); });
+  $(document).ajaxComplete(function () {
+    $('title').text(function (index, text) { return text.replace('Station Bay | Custom Page', 'Station Bay | Neighborhood'); });
+  });
+  
+  
+    const myLatLng = { lat: 40.4900694, lng: -74.2817293 };
+  
+    // const CONFIGURATION = {
+    //       "locations": [
+    //         {"title":"Sciortino\u0027s Harbor Lights","address1":"132 S Broadway","address2":"South Amboy, NJ 08879, USA","coords":{"lat":40.48194525148906,"lng":-74.27906837790985},"placeId":"ChIJhYH5GU3Kw4kRiii9FCIHWE0"},
+    //         {"title":"Blue Moon","address1":"114 S Broadway","address2":"South Amboy, NJ 08879, USA","coords":{"lat":40.482470941556116,"lng":-74.28071314431915},"placeId":"ChIJG4fhSEzKw4kRKr9clsKL4C0"}
+    //       ],
+    //       "mapsApiKey": "AIzaSyBoBkPWmTk-mrqAFR6s5ptuiW87wiuryCI"
+    //     };
+   
+    function initMap() {
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const directionsService = new google.maps.DirectionsService();
+      const map = new google.maps.Map(document.getElementById("map"), {
+        mapTypeControl: false,
+        zoom: 15,
+        center: myLatLng,
+        mapId: "892d9dde9f6dc82e",
+        disableDefaultUI: true,
+      });
+      const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin3.png?w=auto&h=100";
+      new google.maps.Marker({
+        position: myLatLng,
+        map,
+        icon: image,
+      });
+      new AutocompleteDirectionsHandler(map);
+      new LocatorPlus(CONFIGURATION);
+    }
+  
+    class AutocompleteDirectionsHandler {
+      map;
+      originPlaceId;
+      destinationPlaceId;
+      travelMode;
+      directionsService;
+      directionsRenderer;
+      constructor(map) {
+        this.map = map;
+        this.originPlaceId = "";
+        this.travelMode = "DRIVING";
+        const originInput = document.getElementById("origin-input");
+  
+        //These 4 lines render the written directions
+        this.directionsService = new google.maps.DirectionsService();
+        this.directionsRenderer = new google.maps.DirectionsRenderer();
+        this.directionsRenderer.setMap(map);
+        this.directionsRenderer.setPanel(document.getElementById("sidebar"));
+  
+        const originAutocomplete = new google.maps.places.Autocomplete(originInput);
+        // Specify just the place data fields that you need.
+        originAutocomplete.setFields(["place_id"]);
+        this.setupPlaceChangedListener(originAutocomplete, "ORIG");
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
       }
-
-      #map-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        font-family: "Roboto", sans-serif;
-        box-sizing: border-box;
-      }
-
-      #map-container button {
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        font-size: inherit;
-        cursor: pointer;
-      }
-
-      #map {
-        position: absolute;
-        left: 22em;
-        top: 0;
-        right: 0;
-        bottom: 0;
-      }
-
-      #locations-panel {
-        position: absolute;
-        left: 0;
-        width: 22em;
-        top: 0;
-        bottom: 0;
-        overflow-y: auto;
-        background: white;
-        padding: 0.5em;
-        box-sizing: border-box;
-      }
-
-      @media only screen and (max-width: 876px) {
-        #map {
-          left: 0;
-          bottom: 50%;
-        }
-
-        #locations-panel {
-          top: 50%;
-          right: 0;
-          width: unset;
-        }
-      }
-
-      #locations-panel-list .section-name {
-        font-weight: 500;
-        font-size: 0.9em;
-        margin: 1.8em 0 1em 1.5em;
-      }
-
-      #locations-panel-list .location-result {
-        position: relative;
-        padding: 0.8em 3.5em 0.8em 1.4em;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-        cursor: pointer;
-      }
-
-      #locations-panel-list .location-result:first-of-type {
-        border-top: 1px solid rgba(0, 0, 0, 0.12);
-      }
-
-      #locations-panel-list .location-result:last-of-type {
-        border-bottom: none;
-      }
-
-      #locations-panel-list .location-result.selected {
-        outline: 2px solid #4285f4;
-      }
-
-      #locations-panel-list button.select-location {
-        margin-bottom: 0.6em;
-        text-align: left;
-      }
-
-      #locations-panel-list .location-result h2.name {
-        font-size: 1em;
-        font-weight: 500;
-        margin: 0;
-      }
-
-      #locations-panel-list .location-result .address {
-        font-size: 0.9em;
-        margin-bottom: 0.5em;
-      }
-
-      #location-results-list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <script>
-      'use strict';
-
-      /**
-       * Defines an instance of the Locator+ solution, to be instantiated
-       * when the Maps library is loaded.
-       */
-      function LocatorPlus(configuration) {
-        const locator = this;
-
-        locator.locations = configuration.locations || [];
-        locator.capabilities = configuration.capabilities || {};
-
-        const mapEl = document.getElementById('map');
-        const panelEl = document.getElementById('locations-panel');
-        locator.panelListEl = document.getElementById('locations-panel-list');
-        const sectionNameEl =
-            document.getElementById('location-results-section-name');
-        const resultsContainerEl = document.getElementById('location-results-list');
-
-        const itemsTemplate = Handlebars.compile(
-            document.getElementById('locator-result-items-tmpl').innerHTML);
-
-        locator.selectedLocationIdx = null;
-        locator.userCountry = null;
-
-        // Initialize the map -------------------------------------------------------
-        locator.map = new google.maps.Map(mapEl, configuration.mapOptions);
-
-        // Store selection.
-        const selectResultItem = function(locationIdx, panToMarker, scrollToResult) {
-          locator.selectedLocationIdx = locationIdx;
-          for (let locationElem of resultsContainerEl.children) {
-            locationElem.classList.remove('selected');
-            if (getResultIndex(locationElem) === locator.selectedLocationIdx) {
-              locationElem.classList.add('selected');
-              if (scrollToResult) {
-                panelEl.scrollTop = locationElem.offsetTop;
-              }
-            }
+      setupPlaceChangedListener(autocomplete, mode) {
+        autocomplete.bindTo("bounds", this.map);
+        autocomplete.addListener("place_changed", () => {
+          const place = autocomplete.getPlace();
+  
+          if (!place.place_id) {
+            window.alert("Please select an option from the dropdown list.");
+            return;
           }
-          if (panToMarker && (locationIdx != null)) {
-            locator.map.panTo(locator.locations[locationIdx].coords);
-          }
-        };
-
-        // Create a marker for each location.
-        const markers = locator.locations.map(function(location, index) {
-          const marker = new google.maps.Marker({
-            position: location.coords,
-            map: locator.map,
-            title: location.title,
-          });
-          marker.addListener('click', function() {
-            selectResultItem(index, false, true);
-          });
-          return marker;
+  
+          this.originPlaceId = place.place_id;
+          this.route();
+  
         });
-
-        // Fit map to marker bounds.
-        locator.updateBounds = function() {
-          const bounds = new google.maps.LatLngBounds();
-          for (let i = 0; i < markers.length; i++) {
-            bounds.extend(markers[i].getPosition());
-          }
-          locator.map.fitBounds(bounds);
-        };
-        if (locator.locations.length) {
-          locator.updateBounds();
+      }
+      route() {
+        if (!this.originPlaceId) {
+          return;
         }
-
-        // Render the results list --------------------------------------------------
-        const getResultIndex = function(elem) {
-          return parseInt(elem.getAttribute('data-location-index'));
-        };
-
-        locator.renderResultsList = function() {
-          let locations = locator.locations.slice();
-          for (let i = 0; i < locations.length; i++) {
-            locations[i].index = i;
-          }
-          sectionNameEl.textContent = `All locations (${locations.length})`;
-          const resultItemContext = { locations: locations };
-          resultsContainerEl.innerHTML = itemsTemplate(resultItemContext);
-          for (let item of resultsContainerEl.children) {
-            const resultIndex = getResultIndex(item);
-            if (resultIndex === locator.selectedLocationIdx) {
-              item.classList.add('selected');
+        const me = this;
+        this.directionsService.route(
+          {
+            origin: { placeId: this.originPlaceId },
+            destination: myLatLng,
+            travelMode: this.travelMode,
+          },
+          (response, status) => {
+            if (status === "OK") {
+              me.directionsRenderer.setDirections(response);
+            } else {
+              window.alert("Directions request failed due to " + status);
             }
-
-            const resultSelectionHandler = function() {
-              selectResultItem(resultIndex, true, false);
-            };
-
-            // Clicking anywhere on the item selects this location.
-            // Additionally, create a button element to make this behavior
-            // accessible under tab navigation.
-            item.addEventListener('click', resultSelectionHandler);
-            item.querySelector('.select-location')
-                .addEventListener('click', function(e) {
-                  resultSelectionHandler();
-                  e.stopPropagation();
-                });
           }
-        };
-
-        // Optional capability initialization --------------------------------------
-
-        // Initial render of results -----------------------------------------------
-        locator.renderResultsList();
+        );
       }
-    </script>
-    <script>
-      const CONFIGURATION = {
-        "locations": [
-          {"title":"Sciortino\u0027s Harbor Lights","address1":"132 S Broadway","address2":"South Amboy, NJ 08879, USA","coords":{"lat":40.48194525148906,"lng":-74.27906837790985},"placeId":"ChIJhYH5GU3Kw4kRiii9FCIHWE0"},
-          {"title":"Blue Moon","address1":"114 S Broadway","address2":"South Amboy, NJ 08879, USA","coords":{"lat":40.482470941556116,"lng":-74.28071314431915},"placeId":"ChIJG4fhSEzKw4kRKr9clsKL4C0"}
-        ],
-        "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
-        "mapsApiKey": "YOUR_API_KEY_HERE"
-      };
-
-      function initMap() {
-        new LocatorPlus(CONFIGURATION);
-      }
-    </script>
-    <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
-      {{#each locations}}
-        <li class="location-result" data-location-index="{{index}}">
-          <button class="select-location">
-            <h2 class="name">{{title}}</h2>
-          </button>
-          <div class="address">{{address1}}<br>{{address2}}</div>
-        </li>
-      {{/each}}
-    </script>
-  </head>
-  <body>
-    <div id="map-container">
-      <div id="locations-panel">
-        <div id="locations-panel-list">
-          <div class="section-name" id="location-results-section-name">
-            All locations
-          </div>
-          <div class="results">
-            <ul id="location-results-list"></ul>
-          </div>
+    }
+  //   function LocatorPlus(configuration) {
+  //         const locator = this;
+  
+  //         locator.locations = configuration.locations || [];
+  //         locator.capabilities = configuration.capabilities || {};
+  
+  //         const mapEl = document.getElementById('map');
+  //         const panelEl = document.getElementById('locations-panel');
+  //         locator.panelListEl = document.getElementById('locations-panel-list');
+  //         const sectionNameEl =
+  //             document.getElementById('location-results-section-name');
+  //         const resultsContainerEl = document.getElementById('location-results-list');
+  
+  //         const itemsTemplate = Handlebars.compile(
+  //             document.getElementById('locator-result-items-tmpl').innerHTML);
+  
+  //         locator.selectedLocationIdx = null;
+  //         locator.userCountry = null;
+  
+  //         // Store selection.
+  //         const selectResultItem = function(locationIdx, panToMarker, scrollToResult) {
+  //           locator.selectedLocationIdx = locationIdx;
+  //           for (let locationElem of resultsContainerEl.children) {
+  //             locationElem.classList.remove('selected');
+  //             if (getResultIndex(locationElem) === locator.selectedLocationIdx) {
+  //               locationElem.classList.add('selected');
+  //               if (scrollToResult) {
+  //                 panelEl.scrollTop = locationElem.offsetTop;
+  //               }
+  //             }
+  //           }
+  //           if (panToMarker && (locationIdx != null)) {
+  //             locator.map.panTo(locator.locations[locationIdx].coords);
+  //           }
+  //         };
+  
+  //         // Create a marker for each location.
+  //         const markers = locator.locations.map(function(location, index) {
+  //           const marker = new google.maps.Marker({
+  //             position: location.coords,
+  //             map: map,
+  //             title: location.title,
+  //           });
+  //           marker.addListener('click', function() {
+  //             selectResultItem(index, false, true);
+  //           });
+  //           return marker;
+  //         });
+  
+  //         // Fit map to marker bounds.
+  //         // locator.updateBounds = function() {
+  //         //   const bounds = new google.maps.LatLngBounds();
+  //         //   for (let i = 0; i < markers.length; i++) {
+  //         //     bounds.extend(markers[i].getPosition());
+  //         //   }
+  //         //   locator.map.fitBounds(bounds);
+  //         // };
+  //         // if (locator.locations.length) {
+  //         //   locator.updateBounds();
+  //         // }
+  
+  //         // Render the results list --------------------------------------------------
+  //         const getResultIndex = function(elem) {
+  //           return parseInt(elem.getAttribute('data-location-index'));
+  //         };
+  
+  //         locator.renderResultsList = function() {
+  //           let locations = locator.locations.slice();
+  //           for (let i = 0; i < locations.length; i++) {
+  //             locations[i].index = i;
+  //           }
+  //           // sectionNameEl.textContent = `Dining & Nightlife`;
+  //           const resultItemContext = { locations: locations };
+  //           resultsContainerEl.innerHTML = itemsTemplate(resultItemContext);
+  //           for (let item of resultsContainerEl.children) {
+  //             const resultIndex = getResultIndex(item);
+  //             if (resultIndex === locator.selectedLocationIdx) {
+  //               item.classList.add('selected');
+  //             }
+  
+  //             const resultSelectionHandler = function() {
+  //               selectResultItem(resultIndex, true, false);
+  //             };
+  
+  //             // Clicking anywhere on the item selects this location.
+  //             // Additionally, create a button element to make this behavior
+  //             // accessible under tab navigation.
+  //             item.addEventListener('click', resultSelectionHandler);
+  //             item.querySelector('.select-location')
+  //                 .addEventListener('click', function(e) {
+  //                   resultSelectionHandler();
+  //                   e.stopPropagation();
+  //                 });
+  //           }
+  //         };
+  
+  //         // Initial render of results -----------------------------------------------
+  //         locator.renderResultsList();
+  //       }
+  // </script>
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <!-- <script src="https://www.gstatic.com/external_hosted/handlebars/v4.7.6/handlebars.min.js"></script>
+  
+  <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
+    {{#each locations}}
+      <li class="location-result" data-location-index="{{index}}">
+        <button class="select-location">
+          <p class="name">{{title}}</p>
+        </button>
+      </li>
+    {{/each}}
+  </script> -->
+  
+  <h1>NEIGHBORHOOD</h1>
+  <p>Moments from the train station and the upcoming ferry terminal, seamless NYC access to-and-from Station Bay will make coming home to this vibrant waterside neighborhood a delightful escape from the ordinary.</p>
+  <!-- <hr />
+  <div class="row-fluid">
+     <div class="span4">
+         DINING & NIGHTLIFE
+         <ul>
+             <li>Sciotino's Harbor Lights</li>
+             <li>Blue Moon South Amboy</li>
+             <li>Lagoda's Saloon</li>
+             <li>Broadway Bagels</li>
+             <li>Raise the Bar Lounge</li>
+             <li>Broadway Diner</li>
+             <li>Don Giovani Restaurant</li>
+             <li>Dunkin'</li>
+             <li>Java Dave's Coffee</li>
+             <li>Fine Wine & Grill</li>
+             <li>Munckee Br Grill</li>
+             <li>Danny Boy's Irish Pub</li>
+             <li>Ale House Tavern & Tap</li>
+             <li>Costa Verde</li>
+             <li>Monaghan House</li>
+             <li>Nunzios Kitchen</li>
+         </ul>
+  
+         <br />
+     </div>
+     <div class="span4">
+         SHOPPING
+         <ul>
+             <li>Diekers Farm Stand</li>
+             <li> ShopRite of Ernston Road</li>
+             <li>Wawa</li>
+             <li>Walgreens</li>
+             <li>Rite Aid</li>
+             <li>ShopRite of Perth Amboy</li>
+             <li>Broadway Ange Antiques</li>
+         </ul>
+  
+         <br />
+         PARKS
+         <ul>
+             <li>Rartian Bay Waterfront Park</li>
+             <li>Old Bridge Waterfront Park</li>
+             <li>Cheesequake State Park</li>
+             <li>Laurence Harbor Beach</li>
+         </ul>
+  
+         <br />
+     </div>
+     <div class="span4">
+        WELLNESS & LIFESTYLE
+        <ul>
+            <li>South Amboy YMCA</li>
+            <li>Morgan Marina</li>
+            <li>South Amboy Arena Rollermagic</li>
+            <li>Misty Morn Fishing Boat</li>
+            <li>Raritan Marina</li>
+            <li>Brown's Boat Yard Inc.</li>
+            <li>Head Over Heals Gym</li>
+        </ul>
+        <br />
+        TRANSIT
+        <ul>
+            <li>South Amboy Train Station</li>
+            <li>South Amboy Ferry Slip</li>
+        </ul>
+        <br />
+     </div>
+  </div> -->
+  <!-- <hr />
+    <div id="locations-panel">
+      <div id="locations-panel-list">
+        <div id="location-results-section-name">
+          Dining & Entertainment
+        </div>
+        <div class="results">
+          <ol type="1" id="location-results-list"></ol>
         </div>
       </div>
-      <div id="map"></div>
-    </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap&libraries=places&channel=GMPSB_locatorplus_v4_c" async defer></script>
-  </body>
-</html>
+    </div> -->
+  <!-- <br />
+  <h1>GET DIRECTIONS</h1> -->
+  <br />
+  <div class="shore row-fluid">
+     <div class="span4">SANDY HOOK < 40 MIN</div>
+     <div class="span4">POINT PLEASANT < 45 MIN</div>
+     <div class="span4">SEASIDE < 1 HOUR</div>
+  </div>
+  <div id="controls">
+    <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location" />
+  
+  </div>
+  
+  <div id="map"></div>
+  
+  
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoBkPWmTk-mrqAFR6s5ptuiW87wiuryCI&q=place_id:ChIJpeRtzuPNw4kRjBdUV1UsENM&callback=initMap&libraries=places&v=weekly"
+    async></script>

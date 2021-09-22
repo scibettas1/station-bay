@@ -1,71 +1,78 @@
 <style>
-    /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-    #map {
-      height: 100%;
-      min-height: 700px;
-    }
-  
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .adp,
-    .adp table {
-      font-family: 'Montserrat';
-      font-weight: bold;
-      color: #2C2C2C;
-      width: 100%;
-    }
-  
-    .controls {
-      margin-top: 10px;
-      border: 1px solid transparent;
-      border-radius: 2px 0 0 2px;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      height: 32px;
-      outline: none;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    }
-  
-    #origin-input,
-    #destination-input {
-      background-color: #fff;
-      font-family: 'Montserrat';
-      font-weight: bold;
-      font-size: 15px;
-      font-weight: 300;
-      margin-left: 12px;
-      padding: 0 11px 0 13px;
-      text-overflow: ellipsis;
-      width: 200px;
-    }
-  
-    #origin-input:focus,
-    #destination-input:focus {
-      border-color: #5194b8;
-    }
-    .shore {
-    background-color: #003c5b;
-    color: white;
-    padding: 16px 0px;
-    text-align: center;
-    letter-spacing: 7px;
-    }
-    @media (min-width: 1200px){
-        .row-fluid [class*="span"]:first-child,
-        .row-fluid .span4 {
-            margin-left: 20px;
-        }
-    }
+  /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+  #map {
+    height: 100%;
+    min-height: 700px;
+  }
 
-  </style>
-  <script>
+  /* Optional: Makes the sample page fill the window. */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .adp,
+  .adp table {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: #2C2C2C;
+    width: 100%;
+  }
+
+  .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  #origin-input,
+  #destination-input {
+    background-color: #fff;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+
+  #origin-input:focus,
+  #destination-input:focus {
+    border-color: #5194b8;
+  }
+  .shore {
+  background-color: #003c5b;
+  color: white;
+  padding: 16px 0px;
+  text-align: center;
+  letter-spacing: 7px;
+  }
+button {
+    border: none;
+    background: none;
+    margin: 0px 0px -8px 0px;
+}
+button:focus {
+    outline: none!important;
+}
+  @media (min-width: 1200px){
+      .row-fluid [class*="span"]:first-child,
+      .row-fluid .span4 {
+          margin-left: 20px;
+      }
+  }
+</style>
+<script>
   
   $('title').text(function (index, text) { return text.replace('Station Bay | Custom Page', 'Station Bay | Neighborhood'); });
   $(document).ajaxComplete(function () {
@@ -85,18 +92,12 @@
         mapId: "892d9dde9f6dc82e",
         disableDefaultUI: true,
       });
-      const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin3.png?w=auto&h=100";
+      const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin.png";
       new google.maps.Marker({
         position: myLatLng,
         map,
         icon: image,
       });
-      // const dinPin1 = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/dinPin1.png?w=20";
-      // new google.maps.Marker({
-      //   position: { lat: 40.4818333,lng: -74.2812839},
-      //   map,
-      //   icon: dinPin1,
-      // });
       new AutocompleteDirectionsHandler(map);
     }
   
@@ -167,13 +168,13 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
  
   <h1>NEIGHBORHOOD</h1>
-  <p>Moments from the train station and the upcoming ferry terminal, seamless NYC access to-and-from Station Bay will make coming home to this vibrant waterside neighborhood a delightful escape from the ordinary.</p>
+  <p>Moments from the train and the new ferry terminal (coming soon), seamless NYC access to-and-from Station Bay will make coming home to this vibrant waterside neighborhood a delightful escape from the ordinary.</p>
   <hr />
- <div class="row-fluid">
+ <!-- <div class="row-fluid">
      <div class="span4">
          DINING & NIGHTLIFE
          <ul>
-             <li><img src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/dinPin1.png?w=20"/>Sciotino's Harbor Lights</li>
+             <li>Sciotino's Harbor Lights</li>
              <li>Blue Moon South Amboy</li>
              <li>Lagoda's Saloon</li>
              <li>Broadway Bagels</li>
@@ -236,7 +237,7 @@
         <br />
      </div>
  </div>
- <hr />
+ <hr /> -->
  <br />
   <h1>GET DIRECTIONS</h1>
   <br />
