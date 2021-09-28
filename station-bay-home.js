@@ -35,7 +35,7 @@ function initMap() {
     center: myLatLng,
     mapId: "892d9dde9f6dc82e",
   });
-  const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin.png";
+  const image = "https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/StationBay_White-map-pin3.png?h=100";
   new google.maps.Marker({
     position: myLatLng,
     map,

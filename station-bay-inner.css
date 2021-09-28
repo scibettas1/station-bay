@@ -252,6 +252,9 @@ footer .data-wrapper #footer-links .nav-list li .footerlinks:hover {
     border-top: 2px solid #a3bbc3;
     border-bottom: 2px solid #a3bbc3;
 }
+a.address-link, a.address-link:focus, a.address-link:hover, a.today-office-hours, a.today-office-hours:focus, a.today-office-hours:hover {
+    color: #141d29!important;
+}
 #copyright {
     display:none;
 }

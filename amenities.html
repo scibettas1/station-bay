@@ -1,4 +1,6 @@
-<style type="text/css">section {
+<style type="text/css">
+
+section {
     min-height: 800px;
     height: fit-content;
 }
@@ -21,15 +23,41 @@
     overflow: auto;
     width: fit-content
 }
-img {
+#img400a, #img400b, #img500a, #img900, #img500b, #img500c {
     box-shadow: 3px 3px 9px #0000002b;
+    background-position: top center;
+    background-size: cover;
 }
 .mason-row {
     padding: 0px 0px 25px;
 }
+
+#img400a, #img400b {
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/golf.jpeg);
+    height: 350px;
+}
+#img400b {
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/theater.jpeg);
+}
+
 #img500a {
-    max-height: 445px;
-    width: 100%;
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/game%20room.jpeg);
+    height: 480px;
+    background-position: bottom center;
+}
+
+#img900 {
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-900.png);
+    height: 855px;
+}
+#img500b, #img500c {
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500b.png);
+    height: 500px;
+}
+@media (min-width: 401px){
+.hide-above400 {
+    display: none;
+}
 }
 
 @media (max-width: 680px){
@@ -41,8 +69,18 @@ img {
     left: 0px;
   }
   #lifestyle {
-    margin-left: 0px;
+    margin-left: -15px;
+    width: 100vw;
 }
+}
+@media (max-width: 400px){
+  #lifestyle {
+    background: none;
+}
+#lifestyle-description {
+    top: 0;
+}
+
 }
 </style>
 <script>
@@ -57,6 +95,7 @@ $(document).ajaxComplete(function () {
 <br /><br />
 &nbsp; &nbsp;
 <section id="lifestyle">
+    <img class="hide-above400" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg"/>
     <div id="lifestyle-description">
         <h1>LIFESTYLE
             <p class="sub-head">AMENITIES</p>
@@ -126,28 +165,28 @@ $(document).ajaxComplete(function () {
         <div class="span8">
             <div class="row-fluid mason-row">
                 <div class="span6">
-                    <img id="img400" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-400.png"/>
+                    <div id="img400a"></div>
                 </div>
                 <div class="span6">
-                    <img id="img400" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-400.png"/>
+                    <div id="img400b"></div>
                 </div>
             </div>
             <div class="row-fluid mason-row">
                 <div class="span12">
-                    <img id="img500a" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500a.png"/>
+                    <div id="img500a"></div>
                 </div>
             </div>
         </div>
         <div class="span4">
-            <img id="img900" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-900.png"/>
+            <div id="img900"></div>
         </div>
     </div>
     <div class="row-fluid">
         <div class="span6">
-            <img id="img500b" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500b.png" />
+            <div id="img500b"></div>
         </div>
         <div class="span6">
-            <img id="img500b" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/placeholder-500b.png" />
+            <div id="img500c"></div>
         </div>
     </div>
 </div>
