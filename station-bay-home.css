@@ -2,6 +2,8 @@ body {
     font-family: 'Montserrat';
     color: #606060;
     font-size: 16px;
+    background: #fff;
+    /* background: #071128; */
 }
 body h4 {
     font-family: 'Montserrat';
@@ -192,6 +194,11 @@ span.burger {
     font-size: calc(11px + 1vw);
     line-height: 0;
 }
+@media (min-width: 992px) {
+    #maincontent .top-slider-wrapper {
+        margin-bottom: 0px;
+    }
+}
 /* <-------------------------arrow animations-----------------------------> */
 .arrow {
     display: block;
@@ -242,16 +249,27 @@ body .section .section-sub-header,
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
 }
-#maincontent .romance-para-section .data-wrapper h1,
+/* #maincontent .romance-para-section .data-wrapper h1,
 .sub-head{
     color: #a3bbc3;
-}
-#maincontent .romance-para-section .data-wrapper h1 {
+} */
+.romance-para-section h1,
+.amenities-section h1,
+.neighbourhood-section h1,
+.stylish-homes-section h1,
+.address-wrapper h1 {
+    color: #a3bbc3;
     font-family: 'Montserrat';
-    font-size: calc(9px + 1vw);
-    letter-spacing: calc(1px + 0.5vw);
+    font-size: calc(9px + 1vw)!important;
+    letter-spacing: calc(1px + 0.3vw);
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
+}
+.amenities-section h1,
+.neighbourhood-section h1,
+.stylish-homes-section h1,
+.address-wrapper h1 {
+    line-height: 0.5!important;
 }
 body .section .section-title-wrapper .section-title {
     font-size: calc(2px + 5vw)!important;
@@ -293,18 +311,27 @@ body .section .section-title-wrapper .section-title {
 /* <-------------------------romance section -----------------------------> */
 
 #maincontent .romance-para-section .image-wrapper .image {
-    -webkit-box-shadow: 0 13px 0 #6c7480;
-    -moz-box-shadow: 0 13px 0 #141D29;
-    box-shadow: 0 13px 0 #141D29;
-    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg);
+    box-shadow: none;
+    border-top: 13px solid #141d29;
+    border-bottom: 13px solid #141d29;
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg);
     background-size: cover;
     background-position: center;
     height: 765px;
     width: 100vw;
 }
+.anchor {
+    position: relative;
+}
+.anchor #romance{
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 0;
+}
 @media (min-width: 992px) {
-    #romance {
-        margin-bottom: -100px;
+    .anchor #romance{
+        top: -150px; /* change this value to match the height of the header */
     }
     #maincontent .romance-para-section .data-wrapper {
         top: 240px;
@@ -318,12 +345,17 @@ body .section .section-title-wrapper .section-title {
     #maincontent .romance-para-section .data-wrapper {
         left: 25%;
     }
+
+    #maincontent .romance-para-section {    
+        margin-bottom: 140px;
+    }
 }
 
 /* <-------------------------amenities section-----------------------------> */
 
 #maincontent .amenities-section .section-title-wrapper .section-title::before {
-    content: "FEATURES & AMENITIES";
+    /* content: "FEATURES & AMENITIES"; */
+    display: none;
 }
 #maincontent .amenities-section {
     background: #fff;
@@ -342,8 +374,10 @@ body .section .section-title-wrapper .section-title {
     content: "EXPLORE AMENITIES";
 }
 #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg) center left no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/2021-06-03-Amenity%20Perspectives-Final-South%20Amboy_Page_2.jpg) center left no-repeat;
     background-size: cover;
+    box-shadow: none;
+    border-bottom: 13px solid #141d29;
 }
 #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-2 {
     display: none;
@@ -356,6 +390,7 @@ body .section .section-title-wrapper .section-title {
 #maincontent .romance-para-section.stylish-homes-section .adv-images-wrapper .img {
     width: 50%;
 }
+
 @media (min-width: 992px) {
     #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
         margin-right: 0;
@@ -367,8 +402,14 @@ body .section .section-title-wrapper .section-title {
         right: 8%;
         padding: 0;
     }
+    #maincontent .amenities-section {
+        margin-bottom: 274px;}
 }
-/* <-------------------------neighborrhood section -----------------------------> */
+/* <-------------------------neighborhood section -----------------------------> */
+
+#maincontent .neighbourhood-section .section-title-wrapper .section-title::before {
+    display: none;
+}
 
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-sub-header::before {
     content: "DEPART FOR A";
@@ -395,7 +436,7 @@ body .section .section-title-wrapper .section-title {
     }
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para::before {
-    content: "Unparalleled convenience, allowing you easy access to-and-from Manhattan while still being surrounded by parks and the tree-lined streets of a suburban enclave — just steps from downtown. Seamlessly connected yet blissfully serene... ";
+    content: "Unparalleled convenience, allowing you easy access to-and-from Manhattan while still being surrounded by parks and the tree-lined streets of a suburban enclave — just steps from downtown.";
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper .btn-primary::after {
     content: "NEIGHBORHOOD & DIRECTIONS";
@@ -428,10 +469,10 @@ body .section .section-title-wrapper .section-title {
 }
 /* <-------------------------stylish homes section-----------------------------> */
 #maincontent .romance-para-section.stylish-homes-section .section-title-wrapper .section-title::before {
-    content: "LUXURY RESIDENCES";
+    display:none;
 }
 #maincontent .romance-para-section.stylish-homes-section .image-wrapper .image {
-    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_775493599.jpg);
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg);
     background-size: cover;
 }
 #maincontent .romance-para-section.stylish-homes-section .data-wrapper .section-sub-header::before {
@@ -451,11 +492,17 @@ body .section .section-title-wrapper .section-title {
     min-height: 600px;
 }
 #maincontent .romance-para-section .adv-images-wrapper {
-    -webkit-box-shadow: 0 13px 0 #141D29;
-    -moz-box-shadow: 0 13px 0 #141D29;
-    box-shadow: 0 13px 0 #141D29;
+    box-shadow: none;
+    border-top: 13px solid #141d29;
+    border-bottom: 13px solid #141d29;
 }
 /* <-------------------------contact-----------------------------> */
+.address-wrapper .wrapper .section-sub-header::before {
+    content: "WE ARE HERE"!important;
+}
+#maincontent .contact-us-section .section-title-wrapper .section-title::before {
+    display: none;
+}
 
 #maincontent .contact-us-section .section-data-wrapper .image-wrapper .img {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1701296233.jpg) center center no-repeat;
@@ -466,10 +513,10 @@ body .section .section-title-wrapper .section-title {
     margin-top: 50px;
 }
 .address-wrapper .wrapper .section-para::before {
-    content: "Interested in visiting our community? Reach out and schedule your tour today!";
+    content: "Interested in visiting our community? Reach out and schedule your tour today.";
 }
 .horizontal#address span[itemprop=address]:after {
-    content: "| Located off of Radford Ferry Road   |";
+    content: "(Located off of Radford Ferry Road)";
 }
 
 /* <-------------------------map-----------------------------> */
