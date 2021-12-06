@@ -245,7 +245,7 @@ body .section .section-sub-header,
 .sub-head {
     color: #141d29;
     font-family: 'PLAYFAIR DISPLAY';
-    font-size: calc(40px + 1vw)!important;
+    font-size: calc(38px + 1vw)!important;
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
 }
@@ -264,6 +264,7 @@ body .section .section-sub-header,
     letter-spacing: calc(1px + 0.3vw);
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
+    margin-top: 4px;
 }
 .amenities-section h1,
 .neighbourhood-section h1,
@@ -444,7 +445,7 @@ body .section .section-title-wrapper .section-title {
 /* images */
 /* top left */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1191065446.jpg) center left no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-21.jpg) bottom left no-repeat;
     background-size: cover;
 }
 /* bottom left 1 */
@@ -464,10 +465,21 @@ body .section .section-title-wrapper .section-title {
 }
 /* bottom right */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-5 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/fishing.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-84.jpg) center center no-repeat;
     background-size: cover;
 }
+
+@media (min-width: 992px) {
+    #maincontent .neighbourhood-section {
+        margin-bottom: 0px;
+    }
+}
+
 /* <-------------------------stylish homes section-----------------------------> */
+.col-xs-12 {
+    min-height: 0px;
+}
+
 #maincontent .romance-para-section.stylish-homes-section .section-title-wrapper .section-title::before {
     display:none;
 }
@@ -481,6 +493,14 @@ body .section .section-title-wrapper .section-title {
 #maincontent .romance-para-section.stylish-homes-section .data-wrapper .para-2::before {
     content: "Come home to the waterfront and discover an impeccable collection of new luxury residences where views stretch to the horizon and spectacular studio, one, and two bedroom homes offer modern amenities with incredible style. Spacious and serene, with a seamless approach to daily life, you’ll find everything you’ve been searching for at Station Bay.";
 }
+
+@media (min-width: 992px){
+    #maincontent .romance-para-section .adv-images-wrapper {
+        padding-top: 0px;
+        box-shadow: none;
+    }
+}
+
 #maincontent .romance-para-section .adv-images-wrapper .img.image-1 {
     background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg) center center no-repeat;
     background-size: cover;
@@ -496,6 +516,14 @@ body .section .section-title-wrapper .section-title {
     border-top: 13px solid #141d29;
     border-bottom: 13px solid #141d29;
 }
+
+@media (min-width: 992px){
+    #maincontent .romance-para-section.stylish-homes-section {
+        margin-bottom: 0px;
+    }
+}
+
+
 /* <-------------------------contact-----------------------------> */
 .address-wrapper .wrapper .section-sub-header::before {
     content: "WE ARE HERE"!important;
