@@ -1,7 +1,7 @@
 body {
     font-family: 'Montserrat';
     color: #606060;
-    font-size: 16px;
+    font-size: 18px;
     background: #fff;
     /* background: #071128; */
 }
@@ -11,9 +11,15 @@ body h4 {
 .address-wrapper .wrapper .section-para::before,
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para,
 #maincontent .romance-para-section .data-wrapper p {
-    font-size: 16px;
+    font-size: 18px;
 }
-
+a {
+    color: inherit;
+}
+body a:hover {
+    text-decoration: none;
+    color: inherit;
+}
 
 #video-bg {
     position: absolute;
@@ -23,6 +29,13 @@ body h4 {
     z-index: -1;
     top: 0;
     left: 0;
+  }
+  .promo {
+    text-align: center;
+    color: #fff !important;
+  }
+  .promo:hover {
+    color: #a3bac3 !important;
   }
 /* <-------------------------buttons-----------------------------> */
 #homepage .btn.btn-primary:hover,
@@ -81,7 +94,7 @@ a:focus, button:focus {
 .main-header .header-wrapper a.click_to_call_href,
 #apldiv a, #rpdiv a {
     color: #fff !important;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 100;
     letter-spacing: 2px;
     line-height: 1;
@@ -253,25 +266,21 @@ body .section .section-sub-header,
 .sub-head{
     color: #a3bbc3;
 } */
-.romance-para-section h1,
-.amenities-section h1,
-.neighbourhood-section h1,
-.stylish-homes-section h1,
-.address-wrapper h1 {
+.romance-para-section h1, .amenities-section h1, .neighbourhood-section h1, .stylish-homes-section h1, .address-wrapper h1 {
     color: #a3bbc3;
     font-family: 'Montserrat';
-    font-size: calc(9px + 1vw)!important;
+    font-size: calc(7px + 1vw)!important;
     letter-spacing: calc(1px + 0.3vw);
     margin: 0px;
     line-height: calc(40px + 1vw)!important;
     margin-top: 4px;
 }
-.amenities-section h1,
+/* .amenities-section h1,
 .neighbourhood-section h1,
 .stylish-homes-section h1,
 .address-wrapper h1 {
     line-height: 0.5!important;
-}
+} */
 body .section .section-title-wrapper .section-title {
     font-size: calc(2px + 5vw)!important;
     line-height: 0px;
@@ -314,11 +323,11 @@ body .section .section-title-wrapper .section-title {
 #maincontent .romance-para-section .image-wrapper .image {
     box-shadow: none;
     border-top: 13px solid #141d29;
-    border-bottom: 13px solid #141d29;
+    /* border-bottom: 13px solid #141d29; */
     background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg);
     background-size: cover;
     background-position: center;
-    height: 765px;
+    min-height: 965px;
     width: 100vw;
 }
 .anchor {
@@ -358,12 +367,9 @@ body .section .section-title-wrapper .section-title {
     /* content: "FEATURES & AMENITIES"; */
     display: none;
 }
-#maincontent .amenities-section {
-    background: #fff;
-}
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper {
     padding: 50px 50px 42px 50px;
-    background: #f6f6f6;
+    /* background: #f6f6f6; */
 }
 #maincontent .amenities-section .wrapper .data-wrapper .content-wrapper .section-sub-header::before {
     content: "THE JOY IS IN";
@@ -379,6 +385,7 @@ body .section .section-title-wrapper .section-title {
     background-size: cover;
     box-shadow: none;
     border-bottom: 13px solid #141d29;
+    border-top: 13px solid #141d29;
 }
 #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-2 {
     display: none;
@@ -396,30 +403,31 @@ body .section .section-title-wrapper .section-title {
     #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
         margin-right: 0;
     }
-    #maincontent .amenities-section .wrapper .image-wrapper {
-        top: 100px;
-    }
     #maincontent .amenities-section .wrapper .data-wrapper {
         right: 8%;
         padding: 0;
     }
     #maincontent .amenities-section {
-        margin-bottom: 274px;}
+        margin-bottom: 0px;
+    }
+
+    #maincontent .amenities-section .wrapper .image-wrapper {
+    top: 0px;
+    margin-bottom: -175px;
+    margin-top: 0px;
 }
-/* <-------------------------neighborhood section -----------------------------> */
+    
+}
+/* <-------------------------residences (previously neighborhood section) -----------------------------> */
 
 #maincontent .neighbourhood-section .section-title-wrapper .section-title::before {
     display: none;
 }
 
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-sub-header::before {
-    content: "DEPART FOR A";
+    content: "ARRIVE AT";
 }
 @media (min-width: 992px){
-    #maincontent .amenities-section .wrapper .image-wrapper {
-        top: 100px;
-        margin-bottom: -175px;
-    }
     .col-md-6 {
         width: 40%;
     }
@@ -433,19 +441,19 @@ body .section .section-title-wrapper .section-title {
         width: 30%;
     }
     #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper {
-        padding: 20% 8% 0 8%;
+        padding: 10% 8% 0 8%;
     }
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para::before {
-    content: "Unparalleled convenience, allowing you easy access to-and-from Manhattan while still being surrounded by parks and the tree-lined streets of a suburban enclave — just steps from downtown.";
+    content: "Come home to the waterfront and discover an impeccable collection of new luxury residences where views stretch to the horizon and spectacular studio, one, and two bedroom homes offer modern amenities with incredible style. Spacious and serene, with a seamless approach to daily life, you’ll find everything you’ve been searching for at Station Bay.";
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper .btn-primary::after {
-    content: "NEIGHBORHOOD & DIRECTIONS";
+    content: "AVAILABILITY";
 }
 /* images */
 /* top left */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-21.jpg) bottom left no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg) bottom left no-repeat;
     background-size: cover;
 }
 /* bottom left 1 */
@@ -460,22 +468,28 @@ body .section .section-title-wrapper .section-title {
 } */
 /* Top right */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-4 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1829212376.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg) center center no-repeat;
     background-size: cover;
 }
 /* bottom right */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-5 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-84.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg) center center no-repeat;
     background-size: cover;
 }
-
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper {
+    display:none;
+}
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper p.section-para .btn-wrapper {
+    display:block;
+}
 @media (min-width: 992px) {
     #maincontent .neighbourhood-section {
         margin-bottom: 0px;
+        margin-top: 175px;
     }
 }
 
-/* <-------------------------stylish homes section-----------------------------> */
+/* <-------------------------neighborhood section (previously stylish homes)-----------------------------> */
 .col-xs-12 {
     min-height: 0px;
 }
@@ -484,36 +498,50 @@ body .section .section-title-wrapper .section-title {
     display:none;
 }
 #maincontent .romance-para-section.stylish-homes-section .image-wrapper .image {
-    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg);
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-21.jpg);
     background-size: cover;
+    background-position: bottom;
 }
 #maincontent .romance-para-section.stylish-homes-section .data-wrapper .section-sub-header::before {
-    content: "ARRIVE AT";
+    content: "DEPART FOR A";
 }
 #maincontent .romance-para-section.stylish-homes-section .data-wrapper .para-2::before {
-    content: "Come home to the waterfront and discover an impeccable collection of new luxury residences where views stretch to the horizon and spectacular studio, one, and two bedroom homes offer modern amenities with incredible style. Spacious and serene, with a seamless approach to daily life, you’ll find everything you’ve been searching for at Station Bay.";
+    content: "Unparalleled convenience, allowing you easy access to-and-from Manhattan while still being surrounded by parks and the tree-lined streets of a suburban enclave — just steps from downtown.";
+}
+
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .btn-wrapper {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .btn-wrapper .btn-primary::after {
+    content: "NEIGHBORHOOD & DIRECTIONS";
 }
 
 @media (min-width: 992px){
     #maincontent .romance-para-section .adv-images-wrapper {
         padding-top: 0px;
         box-shadow: none;
+        margin-top: -143px;
     }
 }
 
 #maincontent .romance-para-section .adv-images-wrapper .img.image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1829212376.jpg) center center no-repeat;
     background-size: cover;
     min-height: 600px;
+    margin-top: 175px;
 }
 #maincontent .romance-para-section .adv-images-wrapper .img.image-2 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-84.jpg) center center no-repeat;
     background-size: cover;
     min-height: 600px;
+    margin-top: 175px;
 }
 #maincontent .romance-para-section .adv-images-wrapper {
     box-shadow: none;
-    border-top: 13px solid #141d29;
+    /* border-top: 13px solid #141d29; */
     border-bottom: 13px solid #141d29;
 }
 
@@ -543,8 +571,22 @@ body .section .section-title-wrapper .section-title {
 .address-wrapper .wrapper .section-para::before {
     content: "Interested in visiting our community? Reach out and schedule your tour today.";
 }
-.horizontal#address span[itemprop=address]:after {
+/* .horizontal#address span[itemprop=address]:after {
     content: "(Located off of Radford Ferry Road)";
+} */
+
+#maincontent .contact-us-section .section-data-wrapper .address-wrapper .wrapper .phoneNumber {
+    padding-bottom: 0px;
+}
+span[itemprop="address"] {
+    display: none;
+ }
+ .addy {
+    color: #141d29;
+}
+.addy:hover, .addy:visited, .addy:focus {
+    text-decoration: none;
+    color: #003c5b;
 }
 
 /* <-------------------------map-----------------------------> */

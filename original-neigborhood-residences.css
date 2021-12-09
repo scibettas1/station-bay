@@ -1,0 +1,113 @@
+/* <-------------------------neighborhood section -----------------------------> */
+
+#maincontent .neighbourhood-section .section-title-wrapper .section-title::before {
+    display: none;
+}
+
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-sub-header::before {
+    content: "DEPART FOR A";
+}
+@media (min-width: 992px){
+    .col-md-6 {
+        width: 40%;
+    }
+    .col-md-push-6 {
+        left: 40%;
+    }
+    .col-md-pull-3 {
+        right: 30%;
+    }
+    .col-md-3 {
+        width: 30%;
+    }
+    #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper {
+        padding: 20% 8% 0 8%;
+    }
+}
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .section-para::before {
+    content: "Unparalleled convenience, allowing you easy access to-and-from Manhattan while still being surrounded by parks and the tree-lined streets of a suburban enclave — just steps from downtown.";
+}
+#maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper .btn-primary::after {
+    content: "NEIGHBORHOOD & DIRECTIONS";
+}
+/* images */
+/* top left */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-1 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-21.jpg) bottom left no-repeat;
+    background-size: cover;
+}
+/* bottom left 1 */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-2 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-21.jpg) center right no-repeat;
+    background-size: cover;
+}
+/* bottom left 2 */
+/* #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-3 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/fishing.jpg) center center no-repeat;
+    background-size: cover;
+} */
+/* Top right */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-4 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1829212376.jpg) center center no-repeat;
+    background-size: cover;
+}
+/* bottom right */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-5 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Station%20Bay%20Neighborhood%20Shoot-84.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 992px) {
+    #maincontent .neighbourhood-section {
+        margin-bottom: 0px;
+    }
+}
+
+/* <-------------------------stylish homes section-----------------------------> */
+.col-xs-12 {
+    min-height: 0px;
+}
+
+#maincontent .romance-para-section.stylish-homes-section .section-title-wrapper .section-title::before {
+    display:none;
+}
+#maincontent .romance-para-section.stylish-homes-section .image-wrapper .image {
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg);
+    background-size: cover;
+}
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .section-sub-header::before {
+    content: "ARRIVE AT";
+}
+#maincontent .romance-para-section.stylish-homes-section .data-wrapper .para-2::before {
+    content: "Come home to the waterfront and discover an impeccable collection of new luxury residences where views stretch to the horizon and spectacular studio, one, and two bedroom homes offer modern amenities with incredible style. Spacious and serene, with a seamless approach to daily life, you’ll find everything you’ve been searching for at Station Bay.";
+}
+
+@media (min-width: 992px){
+    #maincontent .romance-para-section .adv-images-wrapper {
+        padding-top: 0px;
+        box-shadow: none;
+        margin-top: -143px;
+    }
+}
+
+#maincontent .romance-para-section .adv-images-wrapper .img.image-1 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+#maincontent .romance-para-section .adv-images-wrapper .img.image-2 {
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+#maincontent .romance-para-section .adv-images-wrapper {
+    box-shadow: none;
+    /* border-top: 13px solid #141d29; */
+    border-bottom: 13px solid #141d29;
+}
+
+@media (min-width: 992px){
+    #maincontent .romance-para-section.stylish-homes-section {
+        margin-bottom: 0px;
+    }
+}

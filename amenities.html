@@ -1,4 +1,8 @@
 <style type="text/css">
+    #maincontent {
+        background: #fff;
+    }
+
     section {
         min-height: 800px;
         height: fit-content;
@@ -77,6 +81,22 @@
         background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/2021-06-03-Amenity%20Perspectives-Final-South%20Amboy_Page_1.jpg);
     }
 
+    @media (min-width: 992px) {
+        .mobile {
+            display: none;
+        }
+    }
+    @media (max-width: 991px) {
+        .desktop {
+            display: none;
+        }
+        #lifestyle-description,
+        #residences-description {
+            margin-bottom: 85px;
+        }
+    }
+
+
     @media (min-width: 401px) {
         .hide-above400 {
             display: none;
@@ -134,42 +154,68 @@
             <h1>LIFESTYLE
                 <p class="sub-head">AMENITIES</p>
             </h1>
-            <div class="row-fluid">
+            <div class="row-fluid desktop">
                 <div class="span6">
-                <ul class="amenities-list"><br />
-                    <li>Multiple Entertainment Lounges</li>
-                    <li>Co-working Lounge with<br/>Private Meeting Rooms</li>
-                    <li>Smart Cafe with Coffee<br/>& Snack Bar</li>
-                    <li>Fitness Center</li>
-                    <li>Yoga & Spin Studios</li>
-                    <li>Multi-Sport Simulator</li>
-                    <li>Swimming Pool with<br/>Private Cabanas</li>
-                    <li>Arcade & Game Lounge</li>
-                    <li>Movie Theatre</li>
-                    <li>Kid&#39;s playroom</li>
-                </ul>
+                    <ul class="amenities-list"><br />
+                        <li>Multiple Entertainment Lounges</li>
+                        <li>Co-working Lounge with<br/>Private Meeting Rooms</li>
+                        <li>Smart Cafe with Coffee<br/>& Snack Bar</li>
+                        <li>Fitness Center</li>
+                        <li>Yoga & Spin Studios</li>
+                        <li>Multi-Sport Simulator</li>
+                        <li>Swimming Pool with<br/>Private Cabanas</li>
+                        <li>Arcade & Game Lounge</li>
+                        <li>Movie Theatre</li>
+                        <li>Kid&#39;s Playroom</li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <ul class="amenities-list"><br />
+                        <li>Indoor & Outdoor Bars</li>
+                        <li>Firepits</li>
+                        <li>BBQs & Private Dining Areas</li>
+                        <li>Lawn & Garden Areas</li>
+                        <li>Pet Spa & Dog Run</li>
+                        <li>24/7 Onsite Maintenance</li>
+                        <li>Covered Onsite Parking</li>
+                        <li>Amazon&reg; Package Lockers</li>
+                        <li>Moments from South<br/>Amboy Train Station</li>
+                        <li>Next to the Upcoming<br/>Ferry Terminal</li>
+                     </ul>
+                </div>
             </div>
-            <div class="span6">
-                <ul class="amenities-list"><br />
-                    <li>Indoor & Outdoor Bars</li>
-                    <li>Firepits</li>
-                    <li>BBQs & Private Dining Areas</li>
-                    <li>Lawn & Garden Areas</li>
-                    <li>Pet Spa & Dog Run</li>
-                    <li>24/7 Onsite Maintenance</li>
-                    <li>Covered Onsite Parking</li>
-                    <li>Amazon&reg; Package Lockers</li>
-                    <li>Moments from South<br/>Amboy Train Station</li>
-                    <li>Next to the Upcoming<br/>Ferry Terminal</li>
-                </ul>
+            <div class="row-fluid mobile">
+                <div class="span12">
+                    <ul class="amenities-list"><br />
+                        <li>Multiple Entertainment Lounges</li>
+                        <li>Co-working Lounge with<br/>Private Meeting Rooms</li>
+                        <li>Smart Cafe with Coffee<br/>& Snack Bar</li>
+                        <li>Fitness Center</li>
+                        <li>Yoga & Spin Studios</li>
+                        <li>Multi-Sport Simulator</li>
+                        <li>Swimming Pool with<br/>Private Cabanas</li>
+                        <li>Arcade & Game Lounge</li>
+                        <li>Movie Theatre</li>
+                        <li>Kid&#39;s Playroom</li>
+                        <li>Indoor & Outdoor Bars</li>
+                        <li>Firepits</li>
+                        <li>BBQs & Private Dining Areas</li>
+                        <li>Lawn & Garden Areas</li>
+                        <li>Pet Spa & Dog Run</li>
+                        <li>24/7 Onsite Maintenance</li>
+                        <li>Covered Onsite Parking</li>
+                        <li>Amazon&reg; Package Lockers</li>
+                        <li>Moments from South<br/>Amboy Train Station</li>
+                        <li>Next to the Upcoming<br/>Ferry Terminal</li>
+                     </ul>
+                </div>
             </div>
-        </div>
 
         </div>
 
     </section>
 
-    <br /><br />
+<br /><br />
     <div id="image-blocks">
         <div class="row-fluid">
             <div class="span8">
@@ -208,7 +254,7 @@
                 <p class="sub-head">RESIDENCES</p>
             </h1>
                 <ul class="amenities-list"><br />
-                    <li>9' CeiLings</li>
+                    <li>9' Ceilings</li>
                     <li>Luxury Plank Flooring</li>
                     <li>White Cabinets</li>
                     <li>Gray Quartz Countertops</li>
