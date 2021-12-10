@@ -17,10 +17,18 @@ body h4 {
   }
 
 a {
-    color: #141d29;
+    color: inherit;
 }
 body a:hover {
-    color: #003c5b;
+    text-decoration: none;
+    color: inherit;
+}
+.promo {
+    text-align: center;
+    color: #fff !important;
+  }
+.promo:hover {
+    color: #a3bac3 !important;
 }
 /* <-------------------------buttons-----------------------------> */
 .btn.btn-primary:hover,

@@ -34,7 +34,7 @@ $('.address-wrapper #address').append('<div class="addy"><a href="https://www.go
 const currentYear = new Date().getFullYear();
 console.log(currentYear)
 
-$('.copyright').append('<div id="new-copyright"><br />“*Incentives are based on a 26 month lease term and may be valid on select homes.<br />Additional incentives may be available. Prices and promotions are subject to change<br />at any time. Please contact the leasing office for full details.<br /><br /> © ' + currentYear + ' BNE Real Estate Group.  All Rights Reserved.<br />Web Design by <a href="https://scibettas1.github.io/#/" target="_blank">Sam Scibetta</a><div>');
+$('.copyright').append('<div id="new-copyright"><br />**Incentives are based on a 26 month lease term and may be valid on select homes.<br />Additional incentives may be available. Prices and promotions are subject to change<br />at any time. Please contact the leasing office for full details.<br /><br /> © ' + currentYear + ' BNE Real Estate Group.  All Rights Reserved.<br />Web Design by <a href="https://scibettas1.github.io/#/" target="_blank">Sam Scibetta</a><div>');
 
 
 
