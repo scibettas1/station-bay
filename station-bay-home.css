@@ -381,7 +381,7 @@ body .section .section-title-wrapper .section-title {
     content: "EXPLORE AMENITIES";
 }
 #maincontent .amenities-section .wrapper .image-wrapper .img.amenities-image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/2021-06-03-Amenity%20Perspectives-Final-South%20Amboy_Page_2.jpg) center left no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/2021-06-03-Amenity%20Perspectives-Final-South%20Amboy_Page_2.jpg) center center no-repeat;
     background-size: cover;
     box-shadow: none;
     border-bottom: 13px solid #141d29;
