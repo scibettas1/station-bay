@@ -90,6 +90,7 @@ a:focus, button:focus {
 }
 .main-header .header-wrapper .right-nav-links-wrapper {
     line-height: 1;
+    padding-top: 0px;
 }
 .main-header .header-wrapper a.click_to_call_href,
 #apldiv a, #rpdiv a {
@@ -324,7 +325,7 @@ body .section .section-title-wrapper .section-title {
     box-shadow: none;
     border-top: 13px solid #141d29;
     /* border-bottom: 13px solid #141d29; */
-    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-lounge2.jpg);
+    background-image: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/9-2.jpg);
     background-size: cover;
     background-position: center;
     min-height: 965px;
@@ -453,27 +454,24 @@ body .section .section-title-wrapper .section-title {
 /* images */
 /* top left */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-1 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/SB-kitchen.jpg) bottom left no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/The%20Station%2012172126.jpg) bottom center no-repeat;
     background-size: cover;
+    min-height: 740px;
 }
-/* bottom left 1 */
-#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-2 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1156261753.jpg) center right no-repeat;
-    background-size: cover;
+/* bottom left 1 & 2 */
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-2,
+#maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-3 {
+    display:none;
 }
-/* bottom left 2 */
-/* #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-3 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/fishing.jpg) center center no-repeat;
-    background-size: cover;
-} */
+
 /* Top right */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-4 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1698994864.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/TheStation1217211-Edit2.jpg) center center no-repeat;
     background-size: cover;
 }
 /* bottom right */
 #maincontent .neighbourhood-section .section-content-wrapper .img.neighbourhood-image-5 {
-    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/Copy%20of%20shutterstock_1745929169.jpg) center center no-repeat;
+    background: url(https://cdngeneralcf.rentcafe.com/dmslivecafe/2/70799/5-3.jpg) center center no-repeat;
     background-size: cover;
 }
 #maincontent .neighbourhood-section .section-content-wrapper .data-wrapper .wrapper .btn-wrapper {
